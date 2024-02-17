@@ -16,6 +16,10 @@
     "@astrojs/sitemap": "^3.0.5",
     "@astrojs/vercel": "^7.3.1",
     "astro": "^4.4.0",
+    "open-props": "^1.6.18",
+    "postcss-jit-props": "^1.0.14",
+    "postcss-load-config": "^5.0.3",
+    "postcss-preset-env": "^9.3.0",
     "typescript": "^5.3.3"
   }
 }
