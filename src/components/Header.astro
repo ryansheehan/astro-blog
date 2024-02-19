@@ -9,8 +9,8 @@ interface Props {
 }
 ---
 
-<header class={Astro.props?.class}>
-	<nav>
+<header class:list={['content-grid', Astro.props?.class]}>
+	<nav class="breakout">
 		<h2><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
@@ -33,7 +33,7 @@ interface Props {
 		top: 0;				
 		background-color: var(--surface-2);
 		box-shadow: var(--shadow-1);
-		padding: var(--size-3) var(--size-5);			
+		padding: var(--size-3) var(--size-3);		
 	}
 	/* h2 {
 		margin: 0;
@@ -51,7 +51,7 @@ interface Props {
 	nav {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: space-between;		
 	}
 
 	nav a, .social-link {
