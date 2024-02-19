@@ -3,9 +3,13 @@ import HeaderLink from './HeaderLink.astro';
 import LinkedIn from './socials/LinkedIn.astro';
 import Github  from './socials/Github.astro';
 import { SITE_TITLE } from '../consts';
+
+interface Props {
+	class?: string;
+}
 ---
 
-<header>
+<header class={Astro.props?.class}>
 	<nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
@@ -26,14 +30,19 @@ import { SITE_TITLE } from '../consts';
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);		 */
 		position: sticky;
-		top: 0;
-		left: 0;
-		right: 0;
+		top: 0;				
+		background-color: var(--surface-2);
+		box-shadow: var(--shadow-1);
+		padding: var(--size-3) var(--size-5);			
 	}
 	/* h2 {
 		margin: 0;
 		font-size: 1em;
 	} */
+
+	h2 {
+		font-size: var(--font-size-fluid-2);
+	}
 
 	h2 a,
 	h2 a.active {
@@ -50,6 +59,7 @@ import { SITE_TITLE } from '../consts';
 		/* color: var(--black); */
 		/* border-bottom: 4px solid transparent; */
 		text-decoration: none;
+		padding: var(--size-3) var(--size-2);
 	}
 	nav a.active, .social-link.active {
 		text-decoration: none;
@@ -57,7 +67,7 @@ import { SITE_TITLE } from '../consts';
 	}
 	.social-links,
 	.social-links .socail-link {
-		display: flex;
+		display: flex;		
 	}
 	@media (max-width: 720px) {
 		.social-links {

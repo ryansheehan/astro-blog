@@ -7,6 +7,29 @@
 @import "open-props/postcss/style";
 @import "open-props/postcss/normalize";
 
+@import "./theme";
+@import "./typography";
+@import "./utilities";
+
+html {
+	/* scrollbar-gutter: stable; */
+	min-inline-size: var(--size-xs);
+}
+
+body {
+	background-color: var(--surface-1);	
+}
+
+li {
+	list-style-type: none;
+}
+
+/* reset font sizing */
+h1,h2,h3,h4,h5,h6{
+	font-size: var(--font-size-1);
+	line-height: var(--font-lineheight-1);
+}
+
 /* :root {
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
@@ -32,7 +55,7 @@
 	font-style: normal;
 	font-display: swap;
 } */
-body {
+/* body { */
 	/* font-family: 'Atkinson', sans-serif; */
 	/* margin: 0;
 	padding: 0;
@@ -44,7 +67,7 @@ body {
 	color: rgb(var(--gray-dark));
 	font-size: 20px;
 	line-height: 1.7; */
-}
+/* } */
 /* main {
 	width: 720px;
 	max-width: calc(100% - 2em);
