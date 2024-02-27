@@ -13,8 +13,6 @@ const postcssJitPropsConfig = {
     ]
 };
 
-console.log(__dirname);
-
 /** @type {import('postcss-load-config').Config} */
 module.exports = {
     plugins: [

@@ -24,11 +24,6 @@ li {
 	list-style-type: none;
 }
 
-/* reset font sizing */
-h1,h2,h3,h4,h5,h6{
-	font-size: var(--font-size-1);
-	line-height: var(--font-lineheight-1);
-}
 
 /* :root {
 	--accent: #2337ff;
