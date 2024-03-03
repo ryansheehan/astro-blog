@@ -1,0 +1,107 @@
+---
+title: Technology Leader
+summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+contact:
+  name: Ryan Sheehan
+  phone: "6302488741"
+  email: rsheehan@gmail.com
+  location: Dallas, TX
+  links:
+    - name: Website
+      url: "https://ryan.sheehan.info"
+    - name: LinkedIn
+      url: "https://www.linkedin.com/in/sheehanr/"
+    - name: GitHub
+      url: "https://github.com/ryansheehan"
+
+skills:
+  - Team Leadership
+  - Strategic Planning
+  - Software Engineering
+  - Software Development Life Cycle
+  - Microservice Architecture
+  - Cloud Development
+  - User Experience
+  - Agile Practices
+  - Process Improvement
+
+highlights:
+  - title: Large-Scale Business Growth
+    description: Provided technical leadership in providing framework and tools critical for organic growth while supporting M&A and post-acquisition integration efforts, propelling division sales from $100M to $500M while enabling overall company growth to move from $200M to $1B and then later onto $2.4B annual revenue.
+
+  - title: Innovative Retail Offerings
+    description: Headed development of a completely new NBA store on 5th Avenue in New York City, incorporating interactive wayfinding, shopping concierge service, extensive A/V, and automated custom jersey creation.
+
+history:
+  - company: Tyler Technologies
+    positions:
+      - title: Software Engineering Manager
+        dates:
+          start:
+            month: 6
+            year: 2013          
+        responsibilities:
+          - Coordinate the strategy and resources for the development of the control plane for all cloud applications.
+          - Lead a committee dedicated to promoting best practices for hundreds of developers.
+          - Oversee and promote Tyler's first major open source project.
+      - title: Lead Engineer
+        dates:
+          start:
+            month: 3
+            year: 2015
+          end:
+            month: 6
+            year: 2013
+        responsibilities:
+          - Built and maintained a project starter used by developers across Tyler to kickstart their web applications
+          - Served as an R&D developer prototyping application ideas and 3rd party tools
+          - Developed and promoted the use of docker within Tyler
+          - Administered scm and auto-build pipelines
+          - Developed and lead a training program for introducing how to build web applications
+
+  - company: Halliburton
+    positions:
+      - title: Software Engineer Consultant
+        dates:
+          start:
+            month: 6
+            year: 2010
+          end:
+            month: 6
+            year: 2013
+        responsibilities:
+          - Lead developer on a large WPF application design to manage and track down-hole drilling tools
+          - Developed a near real-time 3D application, with Unity3D, that reflected down-hole tool data
+          - Oversaw and reviewed code developed by an outsourced team located in Vietnam
+          - Roll out agile development practices
+
+  - company: High Voltage Software
+    positions:
+      - title: Gameplay Software Engineer
+        dates:
+          start:
+            month: 3
+            year: 2008
+          end:
+            month: 6
+            year: 2010
+        responsibilities:
+          - Core gameplay engineer for Iron Man 2 (Wii, PSP) and High Voltage Hot Rod Show (WiiWare)
+          - Worked closely with artists and designers to define gameplay elements
+          - Communicated directly with publishers to resolve certification issues
+          - Implemented motion control systems
+
+education:
+  - school: Southern Methodist University
+    degree: Executive MBA
+    level: Masters
+    year: 2024
+  - school: Southern Methodist University
+    degree: Digital Game Development
+    level: Professional Certification
+    year: 2008
+  - school: Southern Illinois University Edwardsville
+    degree: Computer Science
+    level: Bachelor of Science
+    year: 2005

@@ -1,7 +1,7 @@
 /* Core theme variables */
 html {
     /* Light */
-    --brand-light: var(--orange-6);
+    --brand-light: var(--blue-10);
 
     --text-1-light: var(--gray-8);
     --text-2-light: var(--gray-7);
@@ -13,7 +13,7 @@ html {
 
 
     /* Dark */
-    --brand-dark: var(--orange-3);
+    --brand-dark: var(--blue-3);
 
     --text-1-dark: var(--gray-3);
     --text-2-dark: var(--gray-5);
@@ -25,7 +25,7 @@ html {
 
 
     /* Dim */
-    --brand-dim: var(--orange-4);
+    --brand-dim: var(--blue-4);
 
     --text-1-dim: var(--gray-3);
     --text-2-dim: var(--gray-4);
@@ -79,10 +79,35 @@ html {
     }
 }
 
-h1,h2,h3,h4,p,dt {
+/* h1,h2,h3,h4,p,dt {
     color: var(--text-1);
 }
 
 h5,h6,small,dd {
     color: var(--text-2);
+} */
+
+/* a:hover {
+    color: var(--link);
+    text-decoration-color: var(--link);		
+} */
+
+:where(html) {
+    color-scheme: light dark;
+}
+
+:where(a[href]), :where(a[href]):where(:visited) {
+    color: var(--brand, var(--link));
+    text-decoration-color: var(--brand, var(--link));
+}
+
+h1 {
+    justify-self: center;
+    color: var(--blue-12);		
+}
+
+@media (prefers-color-scheme: dark) {
+    h1 {
+        color: var(--blue-6);
+    }
 }

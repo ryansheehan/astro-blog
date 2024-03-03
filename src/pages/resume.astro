@@ -1,0 +1,20 @@
+---
+import {getEntry} from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const {data: resume} = await getEntry('resume', 'resume');
+---
+
+<BaseLayout title="Ryan Sheehan Resume" description="Resume for Ryan Sheehan">
+    <article>
+        <p>Test Text Here</p>
+    </article>
+</BaseLayout>
+
+<style>
+    @media print {
+        :global(header, footer) {
+            display: none !important;
+        }
+    }
+</style>

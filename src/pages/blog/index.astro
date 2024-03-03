@@ -39,7 +39,7 @@ const posts = (await getCollection('blog')).sort(
 	}
 
 	ul {
-		/* margin-top: var(--size-7); */
+		margin-top: var(--size-5);
 		display: grid;
 		grid-template-columns: subgrid;
 		row-gap: var(--size-7);
@@ -58,6 +58,7 @@ const posts = (await getCollection('blog')).sort(
 
 	h2.title {
 		font-size: var(--font-size-fluid-2);
+		margin-block: var(--size-2) 0;		
 		/* max-inline-size: var(--size-header-1); */
 	}
 
@@ -65,8 +66,6 @@ const posts = (await getCollection('blog')).sort(
 		font-size: var(--font-size-fluid-0);
 		color: var(--text-2);
 	}
-
-
 
 	{/* 
 	main {
