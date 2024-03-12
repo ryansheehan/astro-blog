@@ -1,20 +1,73 @@
 ---
 import {getEntry} from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PrintButton from '../components/PrintButton.astro';
 
 const {data: resume} = await getEntry('resume', 'resume');
+const {title, contact} = resume;
+
 ---
 
 <BaseLayout title="Ryan Sheehan Resume" description="Resume for Ryan Sheehan">
     <article>
-        <p>Test Text Here</p>
+        <div class="page">
+            <PrintButton class="print-button" />
+            <h1>{contact.name}</h1>
+            <h2>{title}</h2>
+        </div>                      
     </article>
 </BaseLayout>
 
 <style>
+    article {     
+        --page-margin: 0.5in;
+                        
+        padding-block: var(--size-4);
+
+        /* position: relative; */
+    }
+
+    .print-button {  
+        --button-size: var(--size-8);   
+        --color: var(--brand);
+        --background-color: var(--gray-4);
+
+
+        width: var(--button-size);        
+        
+        top: var(--size-000);
+        right: calc(50% - var(--button-size) * 0.5);
+        position: absolute;
+        z-index: 10;        
+    }   
+
+    .page {        
+        background-color: var(--gray-0);        
+        color: var(--gray-12);
+        position: relative;
+
+        width: 8.5in;
+        height: 11in;
+        padding: var(--page-margin);
+        /* overflow: hidden; */
+
+        margin-inline: auto; 
+        box-shadow: var(--shadow-4);
+    }
+
     @media print {
-        :global(header, footer) {
+        :global(header, footer, .print-button, astro-dev-toolbar) {
             display: none !important;
+        }
+
+        article {                                
+            margin: 0;
+            padding: 0;
+        }
+
+        .page {                                    
+            margin-inline: 0;
+            box-shadow: none;
         }
     }
 </style>

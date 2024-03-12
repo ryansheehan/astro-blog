@@ -1,0 +1,47 @@
+---
+import {Printer} from 'lucide';
+import LucideIcon from './LucideIcon.astro';
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'button'>;
+---
+
+<button {...Astro.props} title="print">
+    <span class="sr-only">Print page</span>
+    <LucideIcon icon={Printer} class="icon" />
+</button>
+
+<script>
+    const buttons = document.querySelectorAll('.print-button');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => window.print());
+    });
+</script>
+
+<style>
+    button {            
+        color: var(--color);
+        background-color: var(--background-color);
+        
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+        box-shadow: var(--shadow-2);
+        display: grid;
+        place-items: center;
+        padding: var(--size-relative-3) 
+    }    
+
+    .icon {
+        aspect-ratio: 1 / 1;
+        width: 100%;
+    }
+
+    button:hover {
+        filter: drop-shadow(0 0 2px var(--color));
+    }
+
+    button:hover .icon {
+        filter: drop-shadow(0 0 10px var(--color));
+    }
+</style>
+
