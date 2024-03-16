@@ -27,6 +27,7 @@ const resume = defineCollection({
 			location: z.string(),
 			links: z.array(z.object({
 				name: z.string(),
+				display: z.string(),
 				url: z.string().url(),
 			})),			
 		}),
@@ -41,7 +42,8 @@ const resume = defineCollection({
 		history: z.array(z.object({
 			company: z.string(),
 			positions: z.array(z.object({
-			 	title: z.string(),
+				title: z.string(),
+				location: z.string(),
 			 	dates: z.object({
 			 		start: z.object({
 			 			month: z.number(),

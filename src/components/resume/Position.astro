@@ -1,0 +1,64 @@
+---
+import type {Position} from './resume-types';
+import {MapPin} from 'lucide';
+import LucideIcon from '../LucideIcon.astro';
+
+type Props = Position;
+
+const {title, dates, location, responsibilities} = Astro.props;
+
+const endYear = dates.end ? dates.end.year : (new Date()).getFullYear();
+const endMonth = dates.end ? dates.end.month : (new Date()).getMonth();
+const years = Math.round(endYear - dates.start.year + (endMonth - dates.start.month) / 12);
+---
+
+<li class="position col-span-all">
+    <h4 class="position-title">{title}</h4>
+    <p class="location"><LucideIcon icon={MapPin} class="location-icon"/>{location} - {years}yrs</p>
+    <ul class="responsibilities col-span-all">{
+        responsibilities.map(bullet => <li class="responsibility">{bullet}</li>)
+    }</ul>
+</li>
+
+<style>
+    .location-icon {
+        aspect-ratio: 1 / 1;
+        height: 1em;
+        vertical-align: baseline;
+    }
+
+    .position {        
+        display: grid;
+        grid-template-columns: subgrid;             
+        align-items: baseline;        
+        margin-top: var(--size-2);
+    }
+
+    .position-title {
+        font-size: var(--font-size-2);
+        font-weight: var(--font-weight-4);
+    }
+
+    .location {
+        font-weight: var(--font-weight-4);
+        font-size: var(--font-size-0);
+        grid-column: duration;
+        justify-self: var(--align-duration);
+    }
+
+    ul.responsibilities {
+        grid-column: content-start / duration-start;        
+        padding: 0;
+        font-size: var(--font-size-0);        
+    }
+
+    li.responsibility {            
+        padding: 0;
+        max-inline-size: 100%;        
+    }
+
+    li.responsibility::before {
+        content: "•";
+        margin-right: var(--size-1);        
+    }
+</style>

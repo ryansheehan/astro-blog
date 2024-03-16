@@ -1,0 +1,35 @@
+---
+import type {HTMLAttributes} from 'astro/types';
+
+type Props = {
+    title: string;     
+} & HTMLAttributes<'section'>;
+
+const {title, class: className, ...props} = Astro.props;
+
+---
+
+<section class:list={[className]} {...props}>
+    <h2>{title}</h2>
+    <!-- <hr/> -->
+    <slot/>
+</section>
+
+<style>
+    section {
+        max-inline-size: 100%;
+    }
+
+    h2 {
+        min-inline-size: 100%;
+        font-size: var(--font-size-2);
+        text-transform: uppercase;
+        font-weight: var(--font-weight-6);
+        border-bottom: var(--border-size-2) solid var(--gray-12);
+        margin-bottom: var(--size-2);
+    }
+
+    div {
+        min-inline-size: 100%;
+    }
+</style>

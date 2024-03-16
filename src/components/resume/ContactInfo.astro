@@ -1,0 +1,40 @@
+---
+import LucideIcon from '../LucideIcon.astro';
+import {Phone, Mail, Link2 } from 'lucide';
+import LinkedInIcon from '../icons/LinkedInIcon.astro'
+import GitHubIcon from '../icons/GithubIcon.astro';
+
+import type {HTMLAttributes} from 'astro/types'
+
+type Props = {
+    type: 'phone' | 'email' | 'linkedin' | 'github' | 'website' | string;
+    value: string;         
+} & HTMLAttributes<'div'>
+
+const {type, value, class:className, ...props} = Astro.props;
+---
+
+<div class:list={['contact-method', className]} {...props}>
+    {type === 'phone' && <LucideIcon icon={Phone} class="icon"/>}
+    {type === 'email' && <LucideIcon icon={Mail} class="icon"/>}
+    {type === 'website' && <LucideIcon icon={Link2} class="icon"/>}
+    {type === 'linkedin' && <LinkedInIcon class="icon"/>}
+    {type === 'github' && <GitHubIcon class="icon"/>}
+    <span>{value}</span>
+</div>
+
+<style>
+    .icon {              
+        width: auto;
+        height: 1.2em;
+        aspect-ratio: 1 / 1;
+    }
+
+    .contact-method {
+        font-size: var(--font-size);
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: var(--size-1);
+    }
+</style>

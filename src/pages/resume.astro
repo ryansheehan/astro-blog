@@ -3,24 +3,113 @@ import {getEntry} from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PrintButton from '../components/PrintButton.astro';
 
-const {data: resume} = await getEntry('resume', 'resume');
-const {title, contact} = resume;
+import ContactInfo from '../components/resume/ContactInfo.astro';
+import ResumeSection from '../components/resume/ResumeSection.astro';
+import Company from '../components/resume/Company.astro';
+import PageBreak from '../components/resume/PageBreak.astro';
 
+const {data: resume} = await getEntry('resume', 'resume');
+const {title, contact, summary, history} = resume;
+
+const historySlice = 2;
 ---
 
-<BaseLayout title="Ryan Sheehan Resume" description="Resume for Ryan Sheehan">
+<BaseLayout title="Ryan Sheehan Resume" description="Resume for Ryan Sheehan" headerClass='resume' footerClass='resume'>
     <article>
         <div class="page">
+            <header>                                
+                <hgroup class="name-title">
+                    <h1>{contact.name}</h1>
+                    <p>{title}</p>
+                </hgroup>
+                <aside class="contact-info">
+                    <ContactInfo type="email" value={contact.email} />   
+                    <!-- <ContactInfo type="phone" value={contact.phone} /> -->
+                    {contact.links.map(({name, display}) => <ContactInfo type={name} value={display}/>)}             
+                </aside>
+            </header>
+            <summary>{summary}</summary>
+            <ResumeSection title="experience">
+                <ul class="experience">{
+                    history.slice(0, historySlice).map((company) => (<Company {...company} />))
+                }</ul>
+            </ResumeSection>                        
             <PrintButton class="print-button" />
-            <h1>{contact.name}</h1>
-            <h2>{title}</h2>
-        </div>                      
+        </div>           
+        <PageBreak />
+        <div class="page">
+            <ResumeSection title="experience">
+                <ul class="experience">{
+                    history.slice(historySlice).map((company) => (<Company {...company} />))
+                }</ul>
+            </ResumeSection>
+        </div>           
     </article>
 </BaseLayout>
 
 <style>
+    header {
+        display: flex;
+        flex-flow: row nowrap;          
+    }
+
+    :global(.experience) {  
+        padding: 0;      
+        display: grid;
+        align-items: baseline;
+        grid-template-columns: 
+            [content-start location-start] auto
+            [gap-start location-end] 1fr [gap-end duration-start]
+            auto [duration-end content-end];
+        grid-auto-rows: auto;
+        row-gap: var(--size-3);
+    }
+
+    .name-title {
+        flex: 1;
+    }
+
+    .contact-info {
+        --font-size: var(--font-size-0);
+        /* margin-block-end: var(--size-2); */
+        display: grid;
+        align-self: flex-end;
+        align-items: flex-end;
+        column-gap: var(--size-3);
+        row-gap: var(--size-1);;
+        grid-template-columns: max-content max-content;
+        grid-auto-rows: min-content;        
+    }
+
+    .page > * {
+        max-inline-size: 100%;
+    }
+
+    .page > *:not(:first-child) {        
+        margin-block-start: var(--size-4);
+    }
+
+    h1 {        
+        color: var(--gray-12);
+        font-size: var(--font-size-6);
+        font-weight: var(--font-weight-6);
+    }
+
+    h2 {        
+        font-size: var(--font-size-4);
+        font-weight: var(--font-weight-2);
+    }
+
+    summary {
+        font-size: var(--font-size-1);
+        max-inline-size: 100%;
+        margin: 0;
+        background-color: var(--gray-3);
+    }
+
     article {     
-        --page-margin: 0.5in;
+        --page-margin-inline: 0.5in;
+        --page-margin-block: 0.33in;
                         
         padding-block: var(--size-4);
 
@@ -35,8 +124,8 @@ const {title, contact} = resume;
 
         width: var(--button-size);        
         
-        top: var(--size-000);
-        right: calc(50% - var(--button-size) * 0.5);
+        top: var(--size-00);
+        right: var(--size-2);
         position: absolute;
         z-index: 10;        
     }   
@@ -48,15 +137,19 @@ const {title, contact} = resume;
 
         width: 8.5in;
         height: 11in;
-        padding: var(--page-margin);
+        padding: var(--page-margin-block) var(--page-margin-inline);
         /* overflow: hidden; */
 
         margin-inline: auto; 
         box-shadow: var(--shadow-4);
     }
 
+    .page:not(:first-child) {
+        margin-top: var(--size-4);
+    }
+
     @media print {
-        :global(header, footer, .print-button, astro-dev-toolbar) {
+        :global(header.resume, footer.resume, .print-button, astro-dev-toolbar) {
             display: none !important;
         }
 

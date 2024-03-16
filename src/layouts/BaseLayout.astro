@@ -8,9 +8,11 @@
         title?: string;
         description?: string;
         class?: string;
+        headerClass?: string;
+        footerClass?: string;
     }
 
-    const {title = SITE_TITLE, description = SITE_DESCRIPTION} = Astro.props;
+    const {title = SITE_TITLE, description = SITE_DESCRIPTION, headerClass, footerClass} = Astro.props;
 ---
 
 <!doctype html>
@@ -20,11 +22,11 @@
         <slot name="after-base-head"/>
     </head>
     <body>
-        <Header />
+        <Header class={headerClass} />
         <main class:list={[Astro.props?.class]}>
             <slot/>
         </main>
-        <Footer/>
+        <Footer class={footerClass} />
     </body>
 </html>
 

@@ -1,0 +1,66 @@
+---
+import type {Company} from './resume-types';
+import Position from './Position.astro';
+
+type Props = Company;
+
+const months = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const {company, positions} = Astro.props;
+const {dates: firstDate} = positions.slice(-1)[0];
+const {dates: lastDate} = positions[0];
+
+const dateRange = `${months[firstDate.start.month]} ${firstDate.start.year} - ${lastDate.end ? `${months[lastDate.end.month]} ${lastDate.end.year}` : 'present'}`;
+---
+
+<li class="company-experience col-span-all">
+    <h3 class="company-name">{company}</h3>    
+    <p class="date-range">
+        <time datetime={`${firstDate.start.year}-${firstDate.start.month}`}>{months[firstDate.start.month]} {firstDate.start.year}</time>
+        <span> - </span>{   lastDate.end ? 
+            <time datetime={`${lastDate.end.year}-${lastDate.end.month}`}>{months[lastDate.end.month]} {lastDate.end.year}</time>  
+            : <span>present</span>
+        }
+    </p>
+    <ul class="col-span-all">
+        {positions.map(position => <Position {...position} />)}    
+    </ul>
+</li>
+
+<style>
+    ul {
+        display: grid;
+        grid-template-columns: subgrid;
+        padding: 0;
+    }
+
+    .date-range {
+        justify-self: var(--align-duration);
+    }
+
+    .company-experience {
+        padding: 0;
+        display: grid;
+        grid-template-columns: subgrid;
+        align-items: baseline;
+
+        --align-duration: flex-start;
+    }
+
+    .company-experience > .date-range {
+        grid-column: duration;        
+    }
+
+    .company-experience > .content {
+        grid-column: content;
+    }
+
+    .company-name {
+        font-weight: var(--font-weight-7);
+        font-size: var(--font-size-2)
+    }
+
+    .date-range {
+        font-weight: var(--font-weight-7);
+        font-size: var(--font-size-1);
+    }
+</style>

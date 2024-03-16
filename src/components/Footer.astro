@@ -2,10 +2,16 @@
 import LinkedIn from './socials/LinkedIn.astro';
 import Github from './socials/Github.astro';
 
+type Props = {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
+
 const today = new Date();
 ---
 
-<footer class="content-grid">
+<footer class:list={[className, "content-grid"]}>
 	<div>&copy; {today.getFullYear()} Ryan Sheehan. All rights reserved.</div>
 	<div class="social-links">
 		<LinkedIn class="social-link"/>
