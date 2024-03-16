@@ -11,7 +11,7 @@ import PageBreak from '../components/resume/PageBreak.astro';
 const {data: resume} = await getEntry('resume', 'resume');
 const {title, contact, summary, history} = resume;
 
-const historySlice = 2;
+const historySlice = 3;
 ---
 
 <BaseLayout title="Ryan Sheehan Resume" description="Resume for Ryan Sheehan" headerClass='resume' footerClass='resume'>
@@ -38,10 +38,19 @@ const historySlice = 2;
         </div>           
         <PageBreak />
         <div class="page">
-            <ResumeSection title="experience">
+            <!-- <ResumeSection title="experience">
                 <ul class="experience">{
                     history.slice(historySlice).map((company) => (<Company {...company} />))
                 }</ul>
+            </ResumeSection> -->
+            <ResumeSection title="Education">
+
+            </ResumeSection>
+            <ResumeSection title="Skills">
+
+            </ResumeSection>
+            <ResumeSection title="Strengths">
+
             </ResumeSection>
         </div>           
     </article>

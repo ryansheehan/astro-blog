@@ -49,6 +49,8 @@ history:
           - Coordinate the strategy and resources for the development of the control plane for all cloud applications.
           - Lead a committee dedicated to promoting best practices for hundreds of developers.
           - Oversee and promote Tyler's first major open source project.
+          - Oversee and promote Tyler's first major open source project.
+          - Oversee and promote Tyler's first major open source project.
       - title: Lead Engineer
         location: Plano, TX
         dates:
@@ -62,13 +64,12 @@ history:
           - Built and maintained a project starter used by developers across Tyler to kickstart their web applications
           - Served as an R&D developer prototyping application ideas and 3rd party tools
           - Developed and promoted the use of docker within Tyler
-          - Administered scm and auto-build pipelines
-          - Developed and lead a training program for introducing how to build web applications
+          - Administered scm and auto-build pipelines          
       - title: Senior Engineer
         location: Plano, TX
         dates:
           start:
-            month: 3
+            month: 6
             year: 2013
           end:
             month: 6
@@ -76,9 +77,7 @@ history:
         responsibilities:
           - Built and maintained a project starter used by developers across Tyler to kickstart their web applications
           - Served as an R&D developer prototyping application ideas and 3rd party tools
-          - Developed and promoted the use of docker within Tyler
-          - Administered scm and auto-build pipelines
-          - Developed and lead a training program for introducing how to build web applications
+          - Developed and promoted the use of docker within Tyler                    
 
   - company: Halliburton
     positions:
@@ -94,8 +93,7 @@ history:
         responsibilities:
           - Lead developer on a large WPF application design to manage and track down-hole drilling tools
           - Developed a near real-time 3D application, with Unity3D, that reflected down-hole tool data
-          - Oversaw and reviewed code developed by an outsourced team located in Vietnam
-          - Roll out agile development practices
+          - Oversaw and reviewed code developed by an outsourced team located in Vietnam          
 
   - company: High Voltage Software
     positions:
@@ -111,8 +109,7 @@ history:
         responsibilities:
           - Core gameplay engineer for Iron Man 2 (Wii, PSP) and High Voltage Hot Rod Show (WiiWare)
           - Worked closely with artists and designers to define gameplay elements
-          - Communicated directly with publishers to resolve certification issues
-          - Implemented motion control systems
+          - Communicated directly with publishers to resolve certification issues          
 
 education:
   - school: Southern Methodist University

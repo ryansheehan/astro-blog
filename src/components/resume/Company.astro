@@ -13,8 +13,8 @@ const dateRange = `${months[firstDate.start.month]} ${firstDate.start.year} - ${
 ---
 
 <li class="company-experience col-span-all">
-    <h3 class="company-name">{company}</h3>    
-    <p class="date-range">
+    <h3 class="company-name company-header">{company}</h3>    
+    <p class="date-range company-header">
         <time datetime={`${firstDate.start.year}-${firstDate.start.month}`}>{months[firstDate.start.month]} {firstDate.start.year}</time>
         <span> - </span>{   lastDate.end ? 
             <time datetime={`${lastDate.end.year}-${lastDate.end.month}`}>{months[lastDate.end.month]} {lastDate.end.year}</time>  
@@ -31,10 +31,7 @@ const dateRange = `${months[firstDate.start.month]} ${firstDate.start.year} - ${
         display: grid;
         grid-template-columns: subgrid;
         padding: 0;
-    }
-
-    .date-range {
-        justify-self: var(--align-duration);
+        padding-top: var(--size-00);
     }
 
     .company-experience {
@@ -43,7 +40,7 @@ const dateRange = `${months[firstDate.start.month]} ${firstDate.start.year} - ${
         grid-template-columns: subgrid;
         align-items: baseline;
 
-        --align-duration: flex-start;
+        --align-duration: flex-start;        
     }
 
     .company-experience > .date-range {
@@ -54,13 +51,17 @@ const dateRange = `${months[firstDate.start.month]} ${firstDate.start.year} - ${
         grid-column: content;
     }
 
-    .company-name {
-        font-weight: var(--font-weight-7);
-        font-size: var(--font-size-2)
+    .company-name {    
+        font-size: var(--font-size-3);        
     }
 
-    .date-range {
-        font-weight: var(--font-weight-7);
+    .date-range {        
+        justify-self: var(--align-duration);
         font-size: var(--font-size-1);
+    }
+
+    .company-header {
+        font-weight: var(--font-weight-4);
+        font-style: italic;
     }
 </style>
