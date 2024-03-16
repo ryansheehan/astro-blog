@@ -7,9 +7,10 @@ import ContactInfo from '../components/resume/ContactInfo.astro';
 import ResumeSection from '../components/resume/ResumeSection.astro';
 import Company from '../components/resume/Company.astro';
 import PageBreak from '../components/resume/PageBreak.astro';
+import Education from '../components/resume/Education.astro';
 
 const {data: resume} = await getEntry('resume', 'resume');
-const {title, contact, summary, history} = resume;
+const {title, contact, summary, history, education} = resume;
 
 const historySlice = 3;
 ---
@@ -44,7 +45,9 @@ const historySlice = 3;
                 }</ul>
             </ResumeSection> -->
             <ResumeSection title="Education">
-
+                <ul class="education">{
+                    education.map(school => <Education {...school} />)
+                }</ul>
             </ResumeSection>
             <ResumeSection title="Skills">
 
@@ -57,12 +60,20 @@ const historySlice = 3;
 </BaseLayout>
 
 <style>
+    ul.education {
+        display: grid;
+        grid-template-columns: [title-start] auto [title-end gap-start] 1fr [gap-end year-start] auto [year-end];
+        grid-auto-rows: auto;
+        padding: 0;
+        row-gap: var(--size-3);
+    }
+
     header {
         display: flex;
         flex-flow: row nowrap;          
     }
 
-    :global(.experience) {  
+    ul.experience {  
         padding: 0;      
         display: grid;
         align-items: baseline;

@@ -30,11 +30,8 @@ const years = Math.round(endYear - dates.start.year + (endMonth - dates.start.mo
     .position {        
         display: grid;
         grid-template-columns: subgrid;             
-        align-items: baseline;                
-    }
-
-    .position:not(:first-child) {
-        margin-top: var(--size-2);
+        align-items: baseline;
+        padding-inline-start: var(--size-2);              
     }
 
     .position-title {

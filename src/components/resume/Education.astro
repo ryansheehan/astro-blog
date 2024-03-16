@@ -1,0 +1,49 @@
+---
+type Props = {
+    degree: string;
+    school: string;    
+    year: number;
+};
+
+const {degree, school, year} = Astro.props;
+---
+
+<li class="program col-span-all">
+    <hgroup>
+        <h3 class="degree">{degree}</h3>
+        <p class="school">{school}</p>
+    </hgroup>    
+    <p class="year">{year}</p>
+</li>
+
+<style>
+    .program {
+        display: grid;
+        grid-template-columns: subgrid;
+        padding: 0;
+    }
+
+    h3.degree {
+        font-size: var(--font-size-3);
+        font-weight: var(--font-weight-7);        
+        max-inline-size: 100%;
+    }
+
+    p.school {
+        font-size: var(--font-size-1);        
+        max-inline-size: 100%;
+    }
+
+    hgroup {        
+        grid-column: title;
+    }
+
+    p.year {
+        font-size: var(--font-size-1);
+        font-weight: var(--font-weight-4); 
+        font-style: italic;
+        grid-column: year;;
+        justify-self: flex-end;
+        align-self: baseline;
+    }
+</style>

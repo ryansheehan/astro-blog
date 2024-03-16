@@ -21,17 +21,17 @@ const dateRange = `${months[firstDate.start.month]} ${firstDate.start.year} - ${
             : <span>present</span>
         }
     </p>
-    <ul class="col-span-all">
+    <ul class="positions col-span-all">
         {positions.map(position => <Position {...position} />)}    
     </ul>
 </li>
 
 <style>
-    ul {
+    ul.positions {
         display: grid;
         grid-template-columns: subgrid;
-        padding: 0;
-        padding-top: var(--size-00);
+        padding: 0; 
+        row-gap: var(--size-2);       
     }
 
     .company-experience {
@@ -44,7 +44,8 @@ const dateRange = `${months[firstDate.start.month]} ${firstDate.start.year} - ${
     }
 
     .company-experience > .date-range {
-        grid-column: duration;        
+        grid-column: duration;    
+        /* justify-self: center;     */
     }
 
     .company-experience > .content {

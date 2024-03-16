@@ -113,14 +113,11 @@ history:
 
 education:
   - school: Southern Methodist University
-    degree: Executive MBA
-    level: Masters
+    degree: Executive MBA    
     year: 2024
   - school: Southern Methodist University
-    degree: Digital Game Development
-    level: Professional Certification
+    degree: Masters Certification Digital Game Development    
     year: 2008
   - school: Southern Illinois University Edwardsville
-    degree: Computer Science
-    level: Bachelor of Science
+    degree: BS Computer Science
     year: 2005
