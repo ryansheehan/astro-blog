@@ -1,0 +1,39 @@
+---
+type Props = {
+    category: string;
+    skills: string[];
+};
+
+const {category, skills} = Astro.props;
+---
+
+<li class="skill-category">
+    <h3>{category}</h3>
+    <ul class="skill-list">{
+        skills.map(skill => <li class="skill">{skill}</li>)
+    }</ul>
+</li>
+
+
+<style>
+    h3 {
+        font-size: var(--font-size-2);
+        font-weight: var(--font-weight-7);
+        /* font-style: italic; */
+        text-transform: capitalize;
+        /* border-block-end: var(--border-size-1) solid var(--gray-5);
+        padding-block-end: var(--size-1); */
+    }
+
+    li, ul {
+        padding: 0;
+    }
+
+    ul.skill-list {
+        margin-top: var(--size-1);
+    }
+
+    li.skill {
+        font-size: var(--font-size-0);
+    }
+</style>

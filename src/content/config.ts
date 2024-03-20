@@ -32,7 +32,7 @@ const resume = defineCollection({
 			})),			
 		}),
 
-		skills: z.array(z.string()),
+		skills: z.record(z.string(), z.array(z.string())),
 
 		highlights: z.array(z.object({
 			title: z.string(),

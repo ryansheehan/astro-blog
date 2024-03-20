@@ -19,15 +19,18 @@ contact:
       url: "https://github.com/ryansheehan"
 
 skills:
-  - Team Leadership
-  - Strategic Planning
-  - Software Engineering
-  - Software Development Life Cycle
-  - Microservice Architecture
-  - Cloud Development
-  - User Experience
-  - Agile Practices
-  - Process Improvement
+  management:
+    - Team Leadership
+    - Strategic Planning
+    - Process Improvement
+  technology:
+    - Cloud Development
+    - Microservice Architecture
+    - Software Engineering
+  process:
+    - User Experience
+    - Agile Practices
+    - Software Development Life Cycle
 
 highlights:
   - title: Large-Scale Business Growth

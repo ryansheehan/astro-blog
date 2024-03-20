@@ -8,9 +8,10 @@ import ResumeSection from '../components/resume/ResumeSection.astro';
 import Company from '../components/resume/Company.astro';
 import PageBreak from '../components/resume/PageBreak.astro';
 import Education from '../components/resume/Education.astro';
+import Skills from '../components/resume/Skills.astro';
 
 const {data: resume} = await getEntry('resume', 'resume');
-const {title, contact, summary, history, education} = resume;
+const {title, contact, summary, history, education, skills} = resume;
 
 const historySlice = 3;
 ---
@@ -50,16 +51,25 @@ const historySlice = 3;
                 }</ul>
             </ResumeSection>
             <ResumeSection title="Skills">
-
+                <ul class="skills">{
+                    Object.entries(skills).map(([category, skills]) => <Skills {category} {skills} />)
+                }</ul>
             </ResumeSection>
             <ResumeSection title="Strengths">
-
             </ResumeSection>
         </div>           
     </article>
 </BaseLayout>
 
 <style>
+    ul.skills {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+        justify-content: flex-start;
+        column-gap: var(--size-4);
+    }
+
     ul.education {
         display: grid;
         grid-template-columns: [title-start] auto [title-end gap-start] 1fr [gap-end year-start] auto [year-end];
