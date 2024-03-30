@@ -4,8 +4,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+const endOfDay = new Date();
+endOfDay.setHours(23, 59, 59, 999);
+
+const posts = (await getCollection('blog'))
+.filter((post) => import.meta.env.DEV || (post.data.pubDate && post.data.pubDate <= endOfDay))
+.map((post) => {
+	if(!post.data.pubDate) {
+		const {data, ...rest} = post;
+		const {pubDate, ...restData} = data;
+		const newData = {...restData, pubDate: new Date()};
+		return {data: newData, ...rest};
+	}
+	return {...post};
+})
+.sort(
+	(a, b) => b.data.pubDate!.valueOf() - a.data.pubDate!.valueOf()
 );
 
 ---
@@ -17,9 +31,9 @@ const posts = (await getCollection('blog')).sort(
 				posts.map((post) => (
 					<li>
 						<a href={`/blog/${post.slug}/`}>
-							<Image width={720} height={360} src={post.data.heroImage} alt="" class:list={["image"]} />
+							{post.data.heroImage && <Image width={720} height={360} src={post.data.heroImage} alt="" class:list={["image"]} />}
 							<h2 class="title">{post.data.title}</h2>
-							<p class="date"><FormattedDate date={post.data.pubDate} /></p>
+							<p class="date"><FormattedDate date={post.data.pubDate!} /></p>
 						</a>
 					</li>
 				))

@@ -18,6 +18,7 @@ const historySlice = 3;
 
 <BaseLayout title="Ryan Sheehan Resume" description="Resume for Ryan Sheehan" headerClass='resume' footerClass='resume'>
     <article>
+        <PrintButton class="print-button" />
         <div class="page">
             <header>                                
                 <hgroup class="name-title">
@@ -35,8 +36,7 @@ const historySlice = 3;
                 <ul class="experience">{
                     history.slice(0, historySlice).map((company) => (<Company {...company} />))
                 }</ul>
-            </ResumeSection>                        
-            <PrintButton class="print-button" />
+            </ResumeSection>                                    
         </div>           
         <PageBreak />
         <div class="page">
@@ -144,6 +144,8 @@ const historySlice = 3;
         padding-block: var(--size-4);
 
         /* position: relative; */
+        /* top: var(--size-4); */
+
     }
 
     .print-button {  
@@ -154,16 +156,15 @@ const historySlice = 3;
 
         width: var(--button-size);        
         
-        top: var(--size-00);
-        right: var(--size-2);
-        position: absolute;
-        z-index: 10;        
+        top: var(--size-11);
+        left: min(90%, calc(50% + 4.5in));
+        position: fixed;
+        z-index: var(--layer-important);        
     }   
 
     .page {        
         background-color: var(--gray-0);        
-        color: var(--gray-12);
-        position: relative;
+        color: var(--gray-12);        
 
         width: 8.5in;
         height: 11in;

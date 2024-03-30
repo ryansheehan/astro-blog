@@ -24,5 +24,19 @@
     "cSpell.words": [
       "astro"
     ],
-    
+    "markdown.suggest.paths.enabled": false,
+    "[markdown]": {
+      "editor.quickSuggestions": {
+        "other": "off",
+        "comments": "off",
+        "strings": "off"
+      }
+    },
+    "[mdx]": {
+      "editor.quickSuggestions": {
+        "other": "off",
+        "comments": "off",
+        "strings": "off"
+      }
+    }
   }
