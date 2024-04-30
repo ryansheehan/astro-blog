@@ -40,7 +40,7 @@ const historySlice = 3;
             </ResumeSection>                                    
         </div>           
         <PageBreak />
-        <div class="page">
+        <div class="page test">
             <!-- <ResumeSection title="experience">
                 <ul class="experience">{
                     history.slice(historySlice).map((company) => (<Company {...company} />))
@@ -63,6 +63,10 @@ const historySlice = 3;
 </BaseLayout>
 
 <style>
+    .page.test {
+        background-color: var(--red-4);
+    }
+
     ul.skills {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -187,7 +191,7 @@ const historySlice = 3;
 
         article {                                
             margin: 0;
-            padding: 0;
+            padding: 0;            
         }
 
         .page {                                    
