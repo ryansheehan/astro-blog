@@ -40,7 +40,7 @@ const historySlice = 3;
             </ResumeSection>                                    
         </div>           
         <PageBreak />
-        <div class="page test">
+        <div class="page">
             <!-- <ResumeSection title="experience">
                 <ul class="experience">{
                     history.slice(historySlice).map((company) => (<Company {...company} />))
@@ -63,10 +63,6 @@ const historySlice = 3;
 </BaseLayout>
 
 <style>
-    .page.test {
-        background-color: var(--red-4);
-    }
-
     ul.skills {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -108,7 +104,7 @@ const historySlice = 3;
         --font-size: var(--font-size-0);
         /* margin-block-end: var(--size-2); */
         display: grid;
-        align-self: flex-end;
+        align-self: center;
         align-items: flex-end;
         column-gap: var(--size-3);
         row-gap: var(--size-1);;
@@ -139,7 +135,7 @@ const historySlice = 3;
         font-size: var(--font-size-1);
         max-inline-size: 100%;
         margin: 0;
-        background-color: var(--gray-3);
+        background-color: var(--gray-3);        
     }
 
     article {     
@@ -192,6 +188,10 @@ const historySlice = 3;
         article {                                
             margin: 0;
             padding: 0;            
+        }
+
+        .page, .page * {
+            print-color-adjust: exact;
         }
 
         .page {                                    
