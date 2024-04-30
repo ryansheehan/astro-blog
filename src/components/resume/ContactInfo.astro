@@ -8,10 +8,11 @@ import type {HTMLAttributes} from 'astro/types'
 
 type Props = {
     type: 'phone' | 'email' | 'linkedin' | 'github' | 'website' | string;
+    url?: string;
     value: string;         
 } & HTMLAttributes<'div'>
 
-const {type, value, class:className, ...props} = Astro.props;
+const {type, value, url, class:className, ...props} = Astro.props;
 ---
 
 <div class:list={['contact-method', className]} {...props}>
@@ -20,7 +21,7 @@ const {type, value, class:className, ...props} = Astro.props;
     {type === 'website' && <LucideIcon icon={Link2} class="icon"/>}
     {type === 'linkedin' && <LinkedInIcon class="icon"/>}
     {type === 'github' && <GitHubIcon class="icon"/>}
-    <span>{value}</span>
+    {url ? <a href={url}>{value}</a> : <span>{value}</span>}    
 </div>
 
 <style>
@@ -37,4 +38,11 @@ const {type, value, class:className, ...props} = Astro.props;
         align-items: center;
         gap: var(--size-1);
     }
+
+    a {
+        color: inherit;
+        text-decoration-color: inherit;
+    }
+
+
 </style>

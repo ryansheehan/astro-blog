@@ -14,6 +14,7 @@ const {data: resume} = await getEntry('resume', 'resume');
 const {title, contact, summary, history, education, skills} = resume;
 
 const historySlice = 3;
+
 ---
 
 <BaseLayout title="Ryan Sheehan Resume" description="Resume for Ryan Sheehan" headerClass='resume' footerClass='resume'>
@@ -26,9 +27,9 @@ const historySlice = 3;
                     <p>{title}</p>
                 </hgroup>
                 <aside class="contact-info">
-                    <ContactInfo type="email" value={contact.email} />   
+                    <ContactInfo type="email" value={contact.email} url={`mailto:${contact.email}`} />
                     <!-- <ContactInfo type="phone" value={contact.phone} /> -->
-                    {contact.links.map(({name, display}) => <ContactInfo type={name} value={display}/>)}             
+                    {contact.links.map(({name, display, url}) => <ContactInfo type={name} value={display} {url}/>)}             
                 </aside>
             </header>
             <summary>{summary}</summary>
