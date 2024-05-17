@@ -20,19 +20,14 @@
 
         width: 8.5in;
         height: 11in;
-        padding: var(--page-margin-block) var(--page-margin-inline);
-        /* overflow: hidden; */
+        padding: var(--page-margin-block) var(--page-margin-inline);        
 
         margin-inline: auto; 
         box-shadow: var(--shadow-4);
     }
 
-    :global(.page:not(:first-child)) {
-        margin-top: var(--size-4);
-    }
-
     @media print {
-        .page, .page * {
+        .page, :global(.page *) {
             print-color-adjust: exact;
         }
 
