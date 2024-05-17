@@ -1,47 +1,83 @@
 ---
+import {Image} from 'astro:assets';
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import FormattedDate from '@components/FormattedDate.astro';
+
+const endOfDay = new Date();
+endOfDay.setHours(23, 59, 59, 999);
+
+const posts = (await getCollection('blog'))
+.filter((post) => import.meta.env.DEV || (post.data.pubDate && post.data.pubDate <= endOfDay))
+.map((post) => {
+	if(!post.data.pubDate) {
+		const {data, ...rest} = post;
+		const {pubDate, ...restData} = data;
+		const newData = {...restData, pubDate: new Date()};
+		return {data: newData, ...rest};
+	}
+	return {...post};
+})
+.sort(
+	(a, b) => b.data.pubDate!.valueOf() - a.data.pubDate!.valueOf()
+);
+
 ---
 
-<BaseLayout class="content-grid">
-	<h1 class="title breakout">Hello, Astronaut!</h1>
-	<p>
-		Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-		template serves as a lightweight, minimally-styled starting point for anyone looking to build
-		a personal website, blog, or portfolio with Astro.
-	</p>
-	<p>
-		This template comes with a few integrations already configured in your
-		<code>astro.config.mjs</code> file. You can customize your setup with
-		<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-		React, or Vue to your project.
-	</p>
-	<p>Here are a few ideas on how to get started with the template:</p>
-	<ul>
-		<li>Edit this page in <code>src/pages/index.astro</code></li>
-		<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-		<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-		<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-		<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-	</ul>
-	<p>
-		Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-			>read the docs
-		</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-	</p>
-	<p>
-		Looking for a blog template with a bit more personality? Check out <a
-			href="https://github.com/Charca/astro-blog-template"
-			>astro-blog-template
-		</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-	</p>
+<BaseLayout>
+	<section class="content-grid">
+		<ul class="full-width">
+			{
+				posts.map((post) => (
+					<li>
+						<a href={`/blog/${post.slug}/`}>
+							{post.data.heroImage && <Image width={720} height={360} src={post.data.heroImage} alt="" class:list={["image"]} />}
+							<h2 class="title">{post.data.title}</h2>
+							<p class="date"><FormattedDate date={post.data.pubDate!} /></p>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
 </BaseLayout>
 
 <style>
-	h1 {
-    	justify-self: center;    
+	ul, li {
+		padding: 0;
+	}
+
+	a {
+		padding: 0;
+		margin: 0;
+	}
+
+	ul {
+		margin-top: var(--size-5);
+		display: grid;
+		grid-template-columns: subgrid;
+		row-gap: var(--size-7);
 	}
 
 	li {
-		list-style-type: square;
-	}	
+		display: grid;
+		grid-template-columns: subgrid;		
+	}
+
+	.image {
+		max-block-size: var(--size-13);
+		object-fit: cover;
+		width: 100%;
+	}
+
+	h2.title {
+		font-size: var(--font-size-fluid-2);
+		margin-block: var(--size-2) 0;		
+		/* max-inline-size: var(--size-header-1); */
+	}
+
+	p.date {
+		font-size: var(--font-size-fluid-0);
+		color: var(--text-2);
+	}
 </style>

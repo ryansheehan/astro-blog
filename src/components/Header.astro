@@ -13,8 +13,7 @@ interface Props {
 	<nav class="breakout">
 		<h2 class="site-title"><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/">Home</HeaderLink>			
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>		
 		<div class="social-links">
@@ -25,10 +24,6 @@ interface Props {
 </header>
 <style>
 	header {
-		/* margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);		 */
 		position: sticky;
 		top: 0;				
 		background-color: var(--surface-2);
@@ -36,10 +31,6 @@ interface Props {
 		padding: var(--size-3) var(--size-3);				
 		z-index: var(--layer-important);
 	}
-	/* h2 {
-		margin: 0;
-		font-size: 1em;
-	} */
 
 	h2 {
 		font-size: var(--font-size-fluid-2);
@@ -56,15 +47,11 @@ interface Props {
 	}
 
 	nav a, .social-link {
-		/* padding: 1em 0.5em; */
-		/* color: var(--black); */
-		/* border-bottom: 4px solid transparent; */
 		text-decoration: none;
 		padding: var(--size-3) var(--size-2);
 	}
 	nav a.active, .social-link.active {
 		text-decoration: none;
-		/* border-bottom-color: var(--accent); */
 	}
 	.social-links,
 	.social-links .socail-link {
