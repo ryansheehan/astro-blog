@@ -8,15 +8,18 @@ contact:
   email: rsheehan@gmail.com
   location: Dallas, TX
   links:
+    - name: email
+      display: rsheehan@gmail.com
+      url: mailto:rsheehan@gmail.com
     - name: linkedin
-      display: "/in/sheehanr"
-      url: "https://www.linkedin.com/in/sheehanr/"
+      display: /in/sheehanr
+      url: https://www.linkedin.com/in/sheehanr/
     - name: website
-      display: "ryan.sheehan.info"
-      url: "https://ryan.sheehan.info"
+      display: ryan.sheehan.info
+      url: https://ryan.sheehan.info
     - name: github
-      display: "/ryansheehan"
-      url: "https://github.com/ryansheehan"
+      display: /ryansheehan
+      url: https://github.com/ryansheehan
 
 skills:
   management:

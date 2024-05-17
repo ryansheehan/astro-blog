@@ -1,0 +1,26 @@
+---
+import type {Company as CompanyData} from '../resume-types';
+import Company from './Company.astro';
+
+type Props = { history: CompanyData[] };
+
+const { history } = Astro.props;
+---
+
+<ul class="experience">{
+    history.map( company => <Company {...company}/>)
+}</ul>
+
+<style>
+    .experience {
+        padding: 0;      
+        display: grid;
+        align-items: baseline;
+        grid-template-columns: 
+            [content-start location-start] auto
+            [gap-start location-end] 1fr [gap-end duration-start]
+            auto [duration-end content-end];
+        grid-auto-rows: auto;
+        row-gap: var(--size-4);
+    }
+</style>

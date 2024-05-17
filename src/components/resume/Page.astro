@@ -1,0 +1,44 @@
+---
+---
+
+<div class="page">
+    <slot/>
+</div>
+
+<style>
+    :global(.page > *) {
+        max-inline-size: 100%;
+    }
+
+    :global(.page > *:not(:first-child)) {        
+        margin-block-start: var(--size-4);
+    }
+
+    .page {        
+        background-color: var(--gray-0);        
+        color: var(--gray-12);        
+
+        width: 8.5in;
+        height: 11in;
+        padding: var(--page-margin-block) var(--page-margin-inline);
+        /* overflow: hidden; */
+
+        margin-inline: auto; 
+        box-shadow: var(--shadow-4);
+    }
+
+    :global(.page:not(:first-child)) {
+        margin-top: var(--size-4);
+    }
+
+    @media print {
+        .page, .page * {
+            print-color-adjust: exact;
+        }
+
+        .page {                                    
+            margin-inline: 0;
+            box-shadow: none;
+        }
+    }
+</style>

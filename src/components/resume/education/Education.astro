@@ -1,0 +1,24 @@
+---
+import type {Degree as DegreeData} from '../resume-types';
+import Degree from './Degree.astro';
+
+type Props = {
+    education: DegreeData[];
+}
+
+const {education} = Astro.props;
+---
+
+<ul class="education">{
+    education.map(degree => <Degree {...degree} />)
+}</ul>
+
+<style>
+    .education {
+        display: grid;
+        grid-template-columns: [title-start] auto [title-end gap-start] 1fr [gap-end year-start] auto [year-end];
+        grid-auto-rows: auto;
+        padding: 0;
+        row-gap: var(--size-3);
+    }
+</style>

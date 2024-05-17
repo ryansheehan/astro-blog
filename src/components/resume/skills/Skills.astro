@@ -1,0 +1,22 @@
+---
+import type {Skills as SkillsData} from '../resume-types';
+import SkillList from './SkillList.astro';
+
+export type Props = {categories: SkillsData};
+
+const {categories} = Astro.props;
+---
+
+<ul class="skills">{
+    Object.entries(categories).map(([category, skills]) => <SkillList {category} {skills} />)
+}</ul>
+
+<style>
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+        justify-content: flex-start;
+        column-gap: var(--size-4);
+    }
+</style>

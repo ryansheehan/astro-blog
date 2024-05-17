@@ -1,7 +1,9 @@
 ---
+import type {SkillList as SkillListData} from '../resume-types';
+
 type Props = {
     category: string;
-    skills: string[];
+    skills: SkillListData;
 };
 
 const {category, skills} = Astro.props;
@@ -13,7 +15,6 @@ const {category, skills} = Astro.props;
         skills.map(skill => <li class="skill">{skill}</li>)
     }</ul>
 </li>
-
 
 <style>
     h3 {
@@ -37,3 +38,4 @@ const {category, skills} = Astro.props;
         font-size: var(--font-size-0);
     }
 </style>
+

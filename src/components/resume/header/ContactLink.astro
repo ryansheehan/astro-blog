@@ -1,0 +1,36 @@
+---
+type Props = {
+    url: string;
+    value: string;
+}
+
+const {url, value} = Astro.props;
+---
+
+<div class="contact-method">
+    <div class="icon-container">
+        <slot name="icon"/>
+    </div>
+    <a href={url}>{value}</a>
+</div>
+
+<style>
+    .icon-container {              
+        width: auto;
+        height: 1.2em;
+        aspect-ratio: 1 / 1;        
+    }
+
+    .contact-method {
+        font-size: var(--font-size);
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: var(--size-1);
+    }
+
+    a {
+        color: inherit;
+        text-decoration-color: inherit;
+    }
+</style>

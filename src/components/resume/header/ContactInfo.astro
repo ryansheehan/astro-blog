@@ -1,0 +1,38 @@
+---
+import type {ResumeLink} from '../resume-types';
+import {Phone, Mail, Link2, } from 'lucide';
+import LucideIcon from '../../LucideIcon.astro';
+import LinkedInIcon from '../../icons/LinkedInIcon.astro';
+import GithubIcon from '../../icons/GithubIcon.astro';
+import ContactLink from './ContactLink.astro';
+
+type Props = {
+    links: ResumeLink[];
+};
+
+const {links} = Astro.props;
+---
+
+<aside class="contact-info">{
+    links.map(({name, display, url}) => <ContactLink {url} value={display}>
+        {name === 'phone' && <LucideIcon slot="icon" icon={Phone} style="display:block;"/>}
+        {name === 'email' && <LucideIcon slot="icon" icon={Mail} style="display:block;"/>}
+        {name === 'website' && <LucideIcon slot="icon" icon={Link2} style="display:block;"/>}
+        {name === 'linkedin' && <LinkedInIcon slot="icon"/>}
+        {name === 'github' && <GithubIcon slot="icon"/>}
+    </ContactLink>)
+}</aside>
+
+<style>
+    .contact-info {
+        --font-size: var(--font-size-0);
+        /* margin-block-end: var(--size-2); */
+        display: grid;
+        align-self: center;
+        align-items: flex-end;
+        column-gap: var(--size-3);
+        row-gap: var(--size-1);
+        grid-template-columns: max-content max-content;
+        grid-auto-rows: min-content;        
+    }
+</style>

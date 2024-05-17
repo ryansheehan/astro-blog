@@ -3,152 +3,53 @@ import {getEntry} from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PrintButton from '../components/PrintButton.astro';
 
-import ContactInfo from '../components/resume/ContactInfo.astro';
 import ResumeSection from '../components/resume/ResumeSection.astro';
-import Company from '../components/resume/Company.astro';
+import Experience from '../components/resume/experience/Experience.astro';
 import PageBreak from '../components/resume/PageBreak.astro';
-import Education from '../components/resume/Education.astro';
-import Skills from '../components/resume/Skills.astro';
+import Education from '../components/resume/education/Education.astro';
+import Skills from '../components/resume/skills/Skills.astro';
+import Header from '../components/resume/header/Header.astro';
+import Summary from '../components/resume/Summary.astro';
+import Page from '../components/resume/Page.astro';
+
 
 const {data: resume} = await getEntry('resume', 'resume');
 const {title, contact, summary, history, education, skills} = resume;
 
 const historySlice = 2;
-
 ---
 
 <BaseLayout title="Ryan Sheehan Resume" description="Resume for Ryan Sheehan" headerClass='resume' footerClass='resume'>
     <article>
         <PrintButton class="print-button" />
-        <div class="page">
-            <header>                                
-                <hgroup class="name-title">
-                    <h1>{contact.name}</h1>
-                    <p>{title}</p>
-                </hgroup>
-                <aside class="contact-info">
-                    <ContactInfo type="email" value={contact.email} url={`mailto:${contact.email}`} />
-                    <!-- <ContactInfo type="phone" value={contact.phone} /> -->
-                    {contact.links.map(({name, display, url}) => <ContactInfo type={name} value={display} {url}/>)}             
-                </aside>
-            </header>
-            <summary>{summary}</summary>
+        <Page>            
+            <Header name={contact.name} {title} links={contact.links} />
+            <Summary {summary} />
             <ResumeSection title="experience">
-                <ul class="experience">{
-                    history.slice(0, historySlice).map((company) => (<Company {...company} />))
-                }</ul>
+                <Experience history={history.slice(0, historySlice)} />
             </ResumeSection>                                    
-        </div>           
+        </Page>           
         <PageBreak />
-        <div class="page">
+        <Page>
             <ResumeSection title="experience">
-                <ul class="experience">{
-                    history.slice(historySlice).map((company) => (<Company {...company} />))
-                }</ul>
+                <Experience history={history.slice(historySlice)} />
             </ResumeSection>
             <ResumeSection title="Education">
-                <ul class="education">{
-                    education.map(school => <Education {...school} />)
-                }</ul>
+                <Education {education} />
             </ResumeSection>
             <ResumeSection title="Skills">
-                <ul class="skills">{
-                    Object.entries(skills).map(([category, skills]) => <Skills {category} {skills} />)
-                }</ul>
+                <Skills categories={skills} />
             </ResumeSection>
-            <ResumeSection title="Strengths">
-            </ResumeSection>
-        </div>           
+        </Page>           
     </article>
 </BaseLayout>
 
 <style>
-    ul.skills {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding: 0;
-        justify-content: flex-start;
-        column-gap: var(--size-4);
-    }
-
-    ul.education {
-        display: grid;
-        grid-template-columns: [title-start] auto [title-end gap-start] 1fr [gap-end year-start] auto [year-end];
-        grid-auto-rows: auto;
-        padding: 0;
-        row-gap: var(--size-3);
-    }
-
-    header {
-        display: flex;
-        flex-flow: row nowrap;          
-    }
-
-    ul.experience {  
-        padding: 0;      
-        display: grid;
-        align-items: baseline;
-        grid-template-columns: 
-            [content-start location-start] auto
-            [gap-start location-end] 1fr [gap-end duration-start]
-            auto [duration-end content-end];
-        grid-auto-rows: auto;
-        row-gap: var(--size-4);
-    }
-
-    .name-title {
-        flex: 1;
-    }
-
-    .contact-info {
-        --font-size: var(--font-size-0);
-        /* margin-block-end: var(--size-2); */
-        display: grid;
-        align-self: center;
-        align-items: flex-end;
-        column-gap: var(--size-3);
-        row-gap: var(--size-1);
-        grid-template-columns: max-content max-content;
-        grid-auto-rows: min-content;        
-    }
-
-    .page > * {
-        max-inline-size: 100%;
-    }
-
-    .page > *:not(:first-child) {        
-        margin-block-start: var(--size-4);
-    }
-
-    h1 {        
-        color: var(--gray-12);
-        font-size: var(--font-size-6);
-        font-weight: var(--font-weight-6);
-    }
-
-    h2 {        
-        font-size: var(--font-size-4);
-        font-weight: var(--font-weight-2);
-    }
-
-    summary {
-        font-size: var(--font-size-1);
-        max-inline-size: 100%;
-        margin: 0;
-        background-color: var(--gray-3);     
-        font-weight: var(--font-weight-4);   
-        /* font-style: italic; */
-    }
-
     article {     
         --page-margin-inline: 0.5in;
         --page-margin-block: 0.33in;
                         
         padding-block: var(--size-4);
-
-        /* position: relative; */
-        /* top: var(--size-4); */
-
     }
 
     .print-button {  
@@ -165,23 +66,6 @@ const historySlice = 2;
         z-index: var(--layer-important);        
     }   
 
-    .page {        
-        background-color: var(--gray-0);        
-        color: var(--gray-12);        
-
-        width: 8.5in;
-        height: 11in;
-        padding: var(--page-margin-block) var(--page-margin-inline);
-        /* overflow: hidden; */
-
-        margin-inline: auto; 
-        box-shadow: var(--shadow-4);
-    }
-
-    .page:not(:first-child) {
-        margin-top: var(--size-4);
-    }
-
     @media print {
         :global(header.resume, footer.resume, .print-button, astro-dev-toolbar) {
             display: none !important;
@@ -190,15 +74,6 @@ const historySlice = 2;
         article {                                
             margin: 0;
             padding: 0;            
-        }
-
-        .page, .page * {
-            print-color-adjust: exact;
-        }
-
-        .page {                                    
-            margin-inline: 0;
-            box-shadow: none;
         }
     }
 </style>
