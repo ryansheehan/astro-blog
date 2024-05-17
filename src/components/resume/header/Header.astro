@@ -1,22 +1,27 @@
 ---
 import type {ResumeLink} from '../resume-types';
 import ContactInfo from './ContactInfo.astro';
+import Summary from '../Summary.astro';
 
 type Props = {
     name: string;
     title: string;
+    summary: string;
     links: ResumeLink[];
 }
 
-const {name, title, links} = Astro.props;
+const {name, title, links, summary} = Astro.props;
 ---
 
 <header>
-    <hgroup class="name-title">
-        <h1>{name}</h1>
-        <p>{title}</p>
-    </hgroup>
-    <ContactInfo {links} />
+    <div class="title-container">
+        <hgroup class="name-title">
+            <h1>{name}</h1>
+            <p>{title}</p>
+        </hgroup>
+        <ContactInfo {links} />
+    </div>
+    <Summary {summary} />
 </header>
 
 <style>
@@ -25,10 +30,11 @@ const {name, title, links} = Astro.props;
         font-size: var(--font-size-6);
         font-weight: var(--font-weight-6);
     }
-    
-    header {
+
+    .title-container {
         display: flex;
-        flex-flow: row nowrap;          
+        flex-flow: row nowrap;  
+        margin-bottom: var(--size-2);
     }
 
     .name-title {

@@ -9,9 +9,7 @@ import PageBreak from '../components/resume/PageBreak.astro';
 import Education from '../components/resume/education/Education.astro';
 import Skills from '../components/resume/skills/Skills.astro';
 import Header from '../components/resume/header/Header.astro';
-import Summary from '../components/resume/Summary.astro';
 import Page from '../components/resume/Page.astro';
-
 
 const {data: resume} = await getEntry('resume', 'resume');
 const {title, contact, summary, history, education, skills} = resume;
@@ -23,8 +21,7 @@ const historySlice = 2;
     <article>
         <PrintButton class="print-button" />
         <Page>            
-            <Header name={contact.name} {title} links={contact.links} />
-            <Summary {summary} />
+            <Header name={contact.name} {title} links={contact.links} {summary} />            
             <ResumeSection title="experience">
                 <Experience history={history.slice(0, historySlice)} />
             </ResumeSection>                                    
