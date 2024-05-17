@@ -26,14 +26,20 @@ skills:
     - Team Leadership
     - Strategic Planning
     - Process Improvement
+    - Cross-Functional Collaboration
+    - Mentoring & Coaching
   technology:
-    - Cloud Development
-    - Microservice Architecture
     - Software Engineering
+    - AWS Cloud Development
+    - Microservice Architecture
+    - SaaS Development
+    - Containerization
   process:
+    - Agile & Scrum Methodologies    
     - User Experience
-    - Agile Practices
-    - Software Development Life Cycle
+    - SDLC
+    - CI/CD Pipelines
+    - Change Management
 
 history:
   - company: Tyler Technologies    
