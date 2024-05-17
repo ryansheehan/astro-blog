@@ -21,26 +21,6 @@ contact:
       display: /ryansheehan
       url: https://github.com/ryansheehan
 
-skills:
-  management:
-    - Team Leadership
-    - Strategic Planning
-    - Process Improvement
-    - Cross-Functional Collaboration
-    - Mentoring & Coaching
-  technology:
-    - Software Engineering
-    - AWS Cloud Development
-    - Microservice Architecture
-    - SaaS Development
-    - Containerization
-  process:
-    - Agile & Scrum Methodologies    
-    - User Experience
-    - SDLC
-    - CI/CD Pipelines
-    - Change Management
-
 history:
   - company: Tyler Technologies    
     positions:
@@ -159,3 +139,23 @@ education:
   - school: Southern Illinois University Edwardsville
     degree: BS Computer Science
     year: 2005
+
+skills:
+  management:
+    - Team Leadership
+    - Strategic Planning
+    - Process Improvement
+    - Cross-Functional Collaboration
+    - Mentoring & Coaching
+  technology:
+    - Software Engineering
+    - AWS Cloud Development
+    - Microservice Architecture
+    - SaaS Development
+    - Containerization
+  process:
+    - Agile & Scrum Methodologies    
+    - User Experience
+    - SDLC
+    - CI/CD Pipelines
+    - Change Management

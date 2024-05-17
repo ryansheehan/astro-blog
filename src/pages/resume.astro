@@ -1,15 +1,15 @@
 ---
 import {getEntry} from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PrintButton from '../components/PrintButton.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PrintButton from '@components/PrintButton.astro';
 
-import ResumeSection from '../components/resume/ResumeSection.astro';
-import Experience from '../components/resume/experience/Experience.astro';
-import PageBreak from '../components/resume/PageBreak.astro';
-import Education from '../components/resume/education/Education.astro';
-import Skills from '../components/resume/skills/Skills.astro';
-import Header from '../components/resume/header/Header.astro';
-import Page from '../components/resume/Page.astro';
+import ResumeSection from '@components/resume/ResumeSection.astro';
+import Experience from '@components/resume/experience/Experience.astro';
+import PageBreak from '@components/resume/PageBreak.astro';
+import Education from '@components/resume/education/Education.astro';
+import Skills from '@components/resume/skills/Skills.astro';
+import Header from '@components/resume/header/Header.astro';
+import Page from '@components/resume/Page.astro';
 
 const {data: resume} = await getEntry('resume', 'resume');
 const {title, contact, summary, history, education, skills} = resume;
