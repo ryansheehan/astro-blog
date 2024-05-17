@@ -1,6 +1,6 @@
 ---
 title: Technology Executive
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+summary: Accomplished technology leader with 18+ years of hands-on experience driving digital transformations. Adept at building high-performing teams by instilling a culture of innovation, ownership, and growth mindset. Committed to driving business value through a customer-centric approach and strategic execution of technology initiatives.
 
 contact:
   name: Ryan Sheehan
@@ -32,29 +32,24 @@ skills:
     - Agile Practices
     - Software Development Life Cycle
 
-highlights:
-  - title: Large-Scale Business Growth
-    description: Provided technical leadership in providing framework and tools critical for organic growth while supporting M&A and post-acquisition integration efforts, propelling division sales from $100M to $500M while enabling overall company growth to move from $200M to $1B and then later onto $2.4B annual revenue.
-
-  - title: Innovative Retail Offerings
-    description: Headed development of a completely new NBA store on 5th Avenue in New York City, incorporating interactive wayfinding, shopping concierge service, extensive A/V, and automated custom jersey creation.
-
 history:
   - company: Tyler Technologies    
     positions:
       - title: Software Engineering Manager
+        summary: Lead a cross-functional team application developers, user experience designers, systems architects, and infrastructure engineers delivering Tyler's cloud platform control plane. Directed the development of Tyler's Forge UX design system.
         location: Remote
         dates:
           start:
             month: 6
             year: 2020         
-        responsibilities:
-          - Coordinate the strategy and resources for the development of the control plane for all cloud applications.
-          - Lead a committee dedicated to promoting best practices for hundreds of developers.
-          - Oversee and promote Tyler's first major open source project.
-          - Oversee and promote Tyler's first major open source project.
-          - Oversee and promote Tyler's first major open source project.
-      - title: Lead Engineer
+        accomplishments:
+          - Direct the planning, implementation, and launch of the user interface to Tyler's SaaS control plane; used by thousands of customers and hundreds of internal staff
+          - Launch Tyler Forge UX System, the company's first major open source project
+          - Coordinate with the CTO and other engineering managers to define and implement the company's cloud strategy
+          - Design and administer the training program for engineering teams transitioning to cloud development
+          - Coach and inspire five direct reports reach their career objectives
+      - title: Lead Software Engineer
+        summary: Guide the development of robust web applications through technical leadership, mentoring, and hands-on coding. Champion cutting-edge technologies and blaze the trail for Tyler's cloud transformation.
         location: Plano, TX
         dates:
           start:
@@ -63,12 +58,12 @@ history:
           end:
             month: 6
             year: 2020
-        responsibilities:
-          - Built and maintained a project starter used by developers across Tyler to kickstart their web applications
-          - Served as an R&D developer prototyping application ideas and 3rd party tools
-          - Developed and promoted the use of docker within Tyler
-          - Administered scm and auto-build pipelines          
-      - title: Senior Engineer
+        accomplishments:
+          - Serve as a founding engineer for Tyler's corporate development division with the stated goal to figure out how to transition Tyler's on-premise solutions to cloud native SaaS solutions
+          - Prototype and evangelize a containerization system for better resource utilization and massive cost savings
+          - Research, build, and maintain project starters used by hundreds of projects to reduce initial development costs                 
+      - title: Senior Engineer / Scrum Master
+        summary: Initially hired as a senior engineer, then moved into the role of Scrum Master. Responsible for leading a team of developers in the Agile process to modernize a major product's financial system.
         location: Plano, TX
         dates:
           start:
@@ -77,14 +72,28 @@ history:
           end:
             month: 6
             year: 2016
-        responsibilities:
-          - Built and maintained a project starter used by developers across Tyler to kickstart their web applications
-          - Served as an R&D developer prototyping application ideas and 3rd party tools
-          - Developed and promoted the use of docker within Tyler                    
+        accomplishments:
+          - Transform a cross-functional team of 11+ people unfamiliar with Agile practices into a multiple high-performing teams
+          - Establish an automated testing framework for large scale financial application refactor to ensure functional equivalence 
+          - Design an extensible system to manage the jury selection process to support different jurisdictional processes                   
+
+  - company: Oh My Heart and Home
+    positions:
+      - title: Owner
+        summary: A passion project that is a recipe and blog site in support of families living with Juvenile Diabetes. The site provides recipes with nutritional information so families can easily calculate insulin dosages, or support any other dietary and nutritional needs.
+        location: Prosper, TX
+        dates:
+          start: 
+            month: 9
+            year: 2020
+        accomplishments:
+          - Build a nutritional calculator that generates nutritional information based on recipe input
+          - Establish the LLC and manage the manage the content and marketing of the site
 
   - company: Halliburton
     positions:
       - title: Software Engineer Consultant        
+        summary: Brought in to apply game development technology and techniques to build a 3D real-time down-hole well monitoring application. Built a process tracking application to manage sign-offs and procedures for teams in the field.
         location: Carrollton, TX
         dates:
           start:
@@ -93,14 +102,31 @@ history:
           end:
             month: 6
             year: 2013
-        responsibilities:
-          - Lead developer on a large WPF application design to manage and track down-hole drilling tools
-          - Developed a near real-time 3D application, with Unity3D, that reflected down-hole tool data
-          - Oversaw and reviewed code developed by an outsourced team located in Vietnam          
+        accomplishments:
+          - Assign and review the work for an outsourced team of engineers located in Vietnam
+          - Complete and implement extensive training on agile development practices
+          - Adapt game development technology to enterprise software for a desktop application
+
+  - company: Timeless Wedding Impressions
+    positions:
+      - title: Owner
+        summary: Built a startup e-commerce business from the ground up to sell artificial wedding bouquets, boutonnieres, and hair flowers. Developed and managed the store front, inventory, and employees.
+        location: Little Elm, TX
+        dates:
+          start:
+            month: 9
+            year: 2009
+          end:
+            month: 10
+            year: 2014
+        accomplishments:
+          - Transform an initial investment of $2,000 into a profitable business with $30,000 in annual revenue
+          - Employee and manage a team of 4 stay-at-home moms to assemble and ship orders
 
   - company: High Voltage Software
     positions:
       - title: Gameplay Software Engineer
+        summary: Software engineer building cross platform video games. Worked closely with artists, animators, audio engineers, designers, and testers to implement the vision for the look and feel of a title. 
         location: Hoffman Estates, IL
         dates:
           start:
@@ -109,17 +135,17 @@ history:
           end:
             month: 6
             year: 2010
-        responsibilities:
-          - Core gameplay engineer for Iron Man 2 (Wii, PSP) and High Voltage Hot Rod Show (WiiWare)
-          - Worked closely with artists and designers to define gameplay elements
-          - Communicated directly with publishers to resolve certification issues          
+        accomplishments:
+          - Develop and launch two titles, Iron Man 2 (Wii, PSP) and High Voltage Hot Rod Show (WiiWare)
+          - Work directly with publishers and platform representatives to resolve certification issues for title launches
+          - Organize and engaged employees into sports teams to promote team building and physical fitness 
 
 education:
   - school: Southern Methodist University
     degree: Executive MBA    
     year: 2024
   - school: Southern Methodist University
-    degree: Masters Certification Digital Game Development    
+    degree: Masters Certificate in Digital Game Development    
     year: 2008
   - school: Southern Illinois University Edwardsville
     degree: BS Computer Science

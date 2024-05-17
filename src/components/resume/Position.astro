@@ -5,7 +5,7 @@ import LucideIcon from '../LucideIcon.astro';
 
 type Props = Position;
 
-const {title, dates, location, responsibilities} = Astro.props;
+const {title, summary, dates, location, accomplishments} = Astro.props;
 
 const endYear = dates.end ? dates.end.year : (new Date()).getFullYear();
 const endMonth = dates.end ? dates.end.month : (new Date()).getMonth();
@@ -15,8 +15,11 @@ const years = Math.round(endYear - dates.start.year + (endMonth - dates.start.mo
 <li class="position col-span-all">
     <h4 class="position-title position-header">{title}</h4>
     <p class="location position-header"><LucideIcon icon={MapPin} class="location-icon"/>{location} - {years}yrs</p>
-    <ul class="responsibilities col-span-all">{
-        responsibilities.map(bullet => <li class="responsibility">{bullet}</li>)
+    <div class="position-summary-wrapper col-span-all">
+        <p class="position-summary">{summary}</p>
+    </div>
+    <ul class="accomplishments col-span-all">{
+        accomplishments.map(bullet => <li class="responsibility">{bullet}</li>)
     }</ul>
 </li>
 
@@ -41,26 +44,48 @@ const years = Math.round(endYear - dates.start.year + (endMonth - dates.start.mo
     .location {        
         font-size: var(--font-size-0);
         grid-column: duration;
-        justify-self: var(--align-duration);        
+        justify-self: var(--align-duration);   
+        padding: 0;     
     }
 
     .position-header {
-        font-weight: var(--font-weight-7);
+        font-weight: var(--font-weight-4);
+        font-style: italic;
     }
 
-    ul.responsibilities {
-        grid-column: content-start / duration-start;        
+    .position-summary-wrapper {
+        display: grid;
+        grid-template-columns: subgrid;
+        margin-block: var(--size-px-1);
+        padding-inline: var(--size-2);
+        padding-block: var(--size-1);
+        border-radius: var(--radius-2);
+        background-color: var(--gray-3);
+    }
+
+    .position-summary {
+        font-size: var(--font-size-0);
+        /* font-style: italic;         */
+        min-inline-size: 100%;
+        grid-column: content-start / content-end; 
+    }
+
+    ul.accomplishments {
+        grid-column: content-start / content-end;        
         padding: 0;
         font-size: var(--font-size-0);        
     }
 
     li.responsibility {            
         padding: 0;
-        max-inline-size: 100%;        
+        max-inline-size: 100%;  
+        list-style-position: outside;  
+        list-style-type: square;
+        margin-left: var(--size-4);
     }
 
-    li.responsibility::before {
+    /* li.responsibility::before {
         content: "•";
         margin-right: var(--size-1);        
-    }
+    } */
 </style>

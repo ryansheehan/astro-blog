@@ -34,15 +34,11 @@ const resume = defineCollection({
 
 		skills: z.record(z.string(), z.array(z.string())),
 
-		highlights: z.array(z.object({
-			title: z.string(),
-			description: z.string(),
-		})),
-
 		history: z.array(z.object({
 			company: z.string(),
 			positions: z.array(z.object({
 				title: z.string(),
+				summary: z.string(),
 				location: z.string(),
 			 	dates: z.object({
 			 		start: z.object({
@@ -54,7 +50,7 @@ const resume = defineCollection({
 			 			year: z.number(),
 			 		}).optional()
 			 	}),
-				responsibilities: z.array(z.string()),
+				accomplishments: z.array(z.string()),
 			}))
 		})),
 

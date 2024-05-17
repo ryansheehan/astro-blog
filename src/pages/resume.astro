@@ -13,7 +13,7 @@ import Skills from '../components/resume/Skills.astro';
 const {data: resume} = await getEntry('resume', 'resume');
 const {title, contact, summary, history, education, skills} = resume;
 
-const historySlice = 3;
+const historySlice = 2;
 
 ---
 
@@ -41,11 +41,11 @@ const historySlice = 3;
         </div>           
         <PageBreak />
         <div class="page">
-            <!-- <ResumeSection title="experience">
+            <ResumeSection title="experience">
                 <ul class="experience">{
                     history.slice(historySlice).map((company) => (<Company {...company} />))
                 }</ul>
-            </ResumeSection> -->
+            </ResumeSection>
             <ResumeSection title="Education">
                 <ul class="education">{
                     education.map(school => <Education {...school} />)
@@ -93,7 +93,7 @@ const historySlice = 3;
             [gap-start location-end] 1fr [gap-end duration-start]
             auto [duration-end content-end];
         grid-auto-rows: auto;
-        row-gap: var(--size-3);
+        row-gap: var(--size-4);
     }
 
     .name-title {
@@ -107,7 +107,7 @@ const historySlice = 3;
         align-self: center;
         align-items: flex-end;
         column-gap: var(--size-3);
-        row-gap: var(--size-1);;
+        row-gap: var(--size-1);
         grid-template-columns: max-content max-content;
         grid-auto-rows: min-content;        
     }
@@ -135,7 +135,9 @@ const historySlice = 3;
         font-size: var(--font-size-1);
         max-inline-size: 100%;
         margin: 0;
-        background-color: var(--gray-3);        
+        background-color: var(--gray-3);     
+        font-weight: var(--font-weight-4);   
+        /* font-style: italic; */
     }
 
     article {     

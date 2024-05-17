@@ -1,5 +1,6 @@
 export type Position = {
     title: string,
+    summary: string,
     location: string,
     dates: {
         start: {
@@ -11,7 +12,7 @@ export type Position = {
             year: number,
         },
     },
-    responsibilities: string[],
+    accomplishments: string[],
 };
 
 export type Company = {
