@@ -89,18 +89,6 @@ html {
     }
 }
 
-/* h1,h2,h3,h4,p,dt {
-    color: var(--text-1);
-}
-
-h5,h6,small,dd {
-    color: var(--text-2);
-} */
-
-/* a:hover {
-    color: var(--link);
-    text-decoration-color: var(--link);		
-} */
 
 :where(html) {
     color-scheme: light dark;
@@ -113,11 +101,5 @@ h5,h6,small,dd {
 
 h1 {
     justify-self: center;
-    color: var(--blue-12);		
-}
-
-@media (prefers-color-scheme: dark) {
-    h1 {
-        color: var(--blue-6);
-    }
+    color: var(--brand);		
 }

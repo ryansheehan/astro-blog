@@ -18,7 +18,9 @@
         [content-end full-width-to-content-end breakout-to-content-end]
         minmax(0, var(--breakout-size)) [breakout-end full-width-to-breakout-end content-to-breakout-end]
         minmax(var(--padding-inline), 1fr) [full-width-end breakout-to-full-width-end content-to-full-width-end]
-    ;
+    ;    
+
+    grid-auto-rows: min-content;
 }
 
 .content-grid > :not(.breakout, .full-width),

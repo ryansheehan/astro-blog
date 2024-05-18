@@ -11,10 +11,11 @@ interface Props {
 
 <header class:list={['content-grid', Astro.props?.class]}>
 	<nav class="breakout">
-		<h2 class="site-title"><a href="/">{SITE_TITLE}</a></h2>
+		<h1 class="site-title"><a href="/">{SITE_TITLE}</a></h1>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>			
+			<HeaderLink href="/" class="home-link">Home</HeaderLink>			
 			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="/resume">Resume</HeaderLink>
 		</div>		
 		<div class="social-links">
 			<LinkedIn class="social-link"/>
@@ -26,19 +27,20 @@ interface Props {
 	header {
 		position: sticky;
 		top: 0;				
-		background-color: var(--surface-2);
+		background-color: var(--surface-1);
 		box-shadow: var(--shadow-1);
-		padding: var(--size-3) var(--size-3);				
+		padding: var(--size-3) var(--size-fluid-1);				
 		z-index: var(--layer-important);
 	}
 
-	h2 {
+	h1 {
 		font-size: var(--font-size-fluid-2);
 	}
 
-	h2 a,
-	h2 a.active {
+	h1 a,
+	h1 a.active {		
 		text-decoration: none;
+		color: inherit;
 	}
 	nav {
 		display: flex;
@@ -46,19 +48,24 @@ interface Props {
 		justify-content: space-between;		
 	}
 
+	.internal-links {		
+		display: flex;
+		flex-flow: row wrap;
+		gap: var(--size-fluid-2);
+	}
+
 	nav a, .social-link {
-		text-decoration: none;
-		padding: var(--size-3) var(--size-2);
+		text-decoration: none;		
 	}
 	nav a.active, .social-link.active {
 		text-decoration: none;
 	}
-	.social-links,
-	.social-links .socail-link {
+	.social-links {
 		display: flex;		
+		gap: var(--size-2);
 	}
 	@media (max-width: 720px) {
-		.social-links {
+		.social-links, .home-link {
 			display: none;
 		}
 	}
