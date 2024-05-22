@@ -1,0 +1,50 @@
+---
+type Props = {
+    accomplishment: string;
+    year?: string;
+}
+
+const {accomplishment, year} = Astro.props;
+---
+
+<li class="accomplishment col-span-all">
+    <ul class="text"><li class="text-item">{accomplishment}<li/></ul>
+    <time class="year" datetime={year?.toString()}>{year}</time>
+</li>
+
+<style>
+    .accomplishment {
+        display: grid;
+        grid-template-columns: subgrid;
+        align-items: baseline;                        
+        list-style: disc;
+    }
+
+    li, ul {
+        padding: 0;
+        margin: 0;
+
+        font-size: var(--font-size-1);
+    }
+
+
+    .text-item {        
+        list-style-position: outside;  
+        list-style-type: square;        
+        margin-left: var(--size-4);
+        max-inline-size: 100%;
+    }
+
+    .accomplishment > .text {
+        grid-column: content;        
+    }
+
+    .accomplishment > .year {
+        grid-column: year;        
+    }
+
+    .year {
+        text-align: right;
+        font-style: italic;
+    }
+</style>

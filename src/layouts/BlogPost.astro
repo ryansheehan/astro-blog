@@ -11,7 +11,7 @@ const { title, description, pubDate=new Date(), updatedDate, heroImage } = Astro
 
 <BaseLayout {title} {description}>
 	<article class="content-grid">
-		{heroImage && <Image width={1020} height={510} src={heroImage} alt="" class="full-width"/>}
+		{heroImage && <Image width={1020} height={510} src={heroImage} alt="" class="banner full-width"/>}
 		<div class="title">
 			<div class="date">
 				<FormattedDate date={pubDate} />
@@ -44,6 +44,10 @@ const { title, description, pubDate=new Date(), updatedDate, heroImage } = Astro
 
 	.last-updated-on {
 		font-style: italic;
+	}
+
+	.banner {
+		/* filter: grayscale(85%); */
 	}
 
 </style>

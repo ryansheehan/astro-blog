@@ -27,12 +27,23 @@ const {links} = Astro.props;
     .contact-info {
         --font-size: var(--font-size-0);
         /* margin-block-end: var(--size-2); */
-        display: grid;
-        align-self: center;
-        align-items: flex-end;
+        /* display: grid; */
+        /* align-self: center; */
+        /* align-items: flex-end; */
         column-gap: var(--size-3);
         row-gap: var(--size-1);
-        grid-template-columns: max-content max-content;
-        grid-auto-rows: min-content;        
+        /* grid-template-columns: max-content max-content; */
+        /* grid-auto-rows: min-content; */
+        display: flex;
+        flex-flow: row wrap;
+        max-inline-size: min-content;        
+    }
+
+    .contact-info {
+        
+    }
+
+    :global(.contact-info > *) {
+        flex: 1 1 auto;
     }
 </style>

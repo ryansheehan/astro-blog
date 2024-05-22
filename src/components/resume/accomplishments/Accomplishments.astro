@@ -1,0 +1,31 @@
+---
+import Accomplishment from './Accomplishment.astro';
+
+type Props = {
+    accomplishments: {
+        accomplishment: string,
+        year?: string,
+    }[]
+}
+
+const {accomplishments} = Astro.props;
+---
+
+<ul class="accomplishments">{
+    accomplishments.map(accomplishment => <Accomplishment {...accomplishment} />)   
+}</ul>
+
+<style>
+    .accomplishments {
+        padding: 0;
+        display: grid;
+        align-items: baseline;
+        grid-template-columns: 
+            [content-start] 1fr
+            [content-end year-start]
+            auto [year-end];
+        grid-auto-rows: auto;
+        row-gap: var(--size-3);
+        column-gap: var(--size-6);        
+    }
+</style>

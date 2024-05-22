@@ -8,13 +8,14 @@ import Experience from '@components/resume/experience/Experience.astro';
 import PageBreak from '@components/resume/PageBreak.astro';
 import Education from '@components/resume/education/Education.astro';
 import Skills from '@components/resume/skills/Skills.astro';
+import Accomplishments from '@components/resume/accomplishments/Accomplishments.astro';
 import Header from '@components/resume/header/Header.astro';
 import Page from '@components/resume/Page.astro';
 
 const {data: resume} = await getEntry('resume', 'resume');
-const {title, contact, summary, history, education, skills} = resume;
+const {title, contact, summary, history, education, skills, accomplishments} = resume;
 
-const historySlice = 2;
+const historySlice = 1;
 ---
 
 <BaseLayout title="Ryan Sheehan Resume" description="Resume for Ryan Sheehan" headerClass='resume' footerClass='resume'>
@@ -22,21 +23,24 @@ const historySlice = 2;
         <PrintButton class="print-button" />
         <Page>            
             <Header name={contact.name} {title} links={contact.links} {summary} />            
-            <ResumeSection title="experience">
+            <ResumeSection title="Core Compentencies">
+                <Skills categories={skills} />
+            </ResumeSection>
+            <ResumeSection title="Experience">
                 <Experience history={history.slice(0, historySlice)} />
             </ResumeSection>                                    
         </Page>           
         <PageBreak />
         <Page>
-            <ResumeSection title="experience">
+            <ResumeSection title="Experience">
                 <Experience history={history.slice(historySlice)} />
             </ResumeSection>
             <ResumeSection title="Education">
                 <Education {education} />
-            </ResumeSection>
-            <ResumeSection title="Skills">
-                <Skills categories={skills} />
-            </ResumeSection>
+            </ResumeSection>  
+            <ResumeSection title="Accomplishments">
+                <Accomplishments {accomplishments} />
+            </ResumeSection>          
         </Page>           
     </article>
 </BaseLayout>

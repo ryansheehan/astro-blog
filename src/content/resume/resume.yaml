@@ -3,30 +3,30 @@ title: Technology Executive
 summary: Accomplished technology leader with 18+ years of hands-on experience driving digital transformations. Adept at building high-performing teams by instilling a culture of innovation, ownership, and growth mindset. Committed to driving business value through a customer-centric approach and strategic execution of technology initiatives.
 
 contact:
-  name: Ryan Sheehan
+  name: Ryan Sheehan, EMBA
   phone: "630.248.8741"
   email: rsheehan@gmail.com
   location: Dallas, TX
   links:
-    - name: email
-      display: rsheehan@gmail.com
-      url: mailto:rsheehan@gmail.com
     - name: linkedin
       display: /in/sheehanr
       url: https://www.linkedin.com/in/sheehanr/
-    - name: website
-      display: ryan.sheehan.info
-      url: https://ryan.sheehan.info
+    # - name: website
+    #   display: ryan.sheehan.info
+    #   url: https://ryan.sheehan.info
     - name: github
       display: /ryansheehan
       url: https://github.com/ryansheehan
+    - name: email
+      display: rsheehan@gmail.com
+      url: mailto:rsheehan@gmail.com
 
 history:
   - company: Tyler Technologies    
     positions:
       - title: Software Engineering Manager
-        summary: Lead a cross-functional team application developers, user experience designers, systems architects, and infrastructure engineers delivering Tyler's cloud platform control plane. Directed the development of Tyler's Forge UX design system.
-        location: Remote
+        summary: Lead a cross-functional team of application developers, user experience designers, systems architects, and infrastructure engineers delivering Tyler's cloud platform control plane. Directed the development of Tyler's Forge UX design system.
+        location: Remote / Plano, TX
         dates:
           start:
             month: 6
@@ -51,7 +51,7 @@ history:
           - Serve as a founding engineer for Tyler's corporate development division with the stated goal to figure out how to transition Tyler's on-premise solutions to cloud native SaaS solutions
           - Prototype and evangelize a containerization system for better resource utilization and massive cost savings
           - Research, build, and maintain project starters used by hundreds of projects to reduce initial development costs                 
-      - title: Senior Engineer / Scrum Master
+      - title: Scrum Master
         summary: Initially hired as a senior engineer, then moved into the role of Scrum Master. Responsible for leading a team of developers in the Agile process to modernize a major product's financial system.
         location: Plano, TX
         dates:
@@ -66,23 +66,10 @@ history:
           - Establish an automated testing framework for large scale financial application refactor to ensure functional equivalence 
           - Design an extensible system to manage the jury selection process to support different jurisdictional processes                   
 
-  - company: Oh My Heart and Home
-    positions:
-      - title: Owner
-        summary: A passion project that is a recipe and blog site in support of families living with Juvenile Diabetes. The site provides recipes with nutritional information so families can easily calculate insulin dosages, or support any other dietary and nutritional needs.
-        location: Prosper, TX
-        dates:
-          start: 
-            month: 9
-            year: 2020
-        accomplishments:
-          - Build a nutritional calculator that generates nutritional information based on recipe input
-          - Establish the LLC and manage the manage the content and marketing of the site
-
   - company: Halliburton
     positions:
       - title: Software Engineer Consultant        
-        summary: Brought in to apply game development technology and techniques to build a 3D real-time down-hole well monitoring application. Built a process tracking application to manage sign-offs and procedures for teams in the field.
+        summary: Consulted on applying game development technology and techniques to build a 3D real-time down-hole well monitoring technology. Design and built a process tracking application to manage sign-offs and procedures for teams in the field.
         location: Carrollton, TX
         dates:
           start:
@@ -95,22 +82,6 @@ history:
           - Assign and review the work for an outsourced team of engineers located in Vietnam
           - Complete and implement extensive training on agile development practices
           - Adapt game development technology to enterprise software for a desktop application
-
-  - company: Timeless Wedding Impressions
-    positions:
-      - title: Owner
-        summary: Built a startup e-commerce business from the ground up to sell artificial wedding bouquets, boutonnieres, and hair flowers. Developed and managed the store front, inventory, and employees.
-        location: Little Elm, TX
-        dates:
-          start:
-            month: 9
-            year: 2009
-          end:
-            month: 10
-            year: 2014
-        accomplishments:
-          - Transform an initial investment of $2,000 into a profitable business with $30,000 in annual revenue
-          - Employee and manage a team of 4 stay-at-home moms to assemble and ship orders
 
   - company: High Voltage Software
     positions:
@@ -129,6 +100,35 @@ history:
           - Work directly with publishers and platform representatives to resolve certification issues for title launches
           - Organize and engaged employees into sports teams to promote team building and physical fitness 
 
+  # - company: Oh My Heart and Home
+  #   positions:
+  #     - title: Owner
+  #       summary: A passion project that is a recipe and blog site in support of families living with Juvenile Diabetes. The site provides recipes with nutritional information so families can easily calculate insulin dosages, or support any other dietary and nutritional needs.
+  #       location: Prosper, TX
+  #       dates:
+  #         start: 
+  #           month: 9
+  #           year: 2020
+  #       accomplishments:
+  #         - Build a nutritional calculator that generates nutritional information based on recipe input
+  #         - Establish the LLC and manage the manage the content and marketing of the site
+
+  # - company: Timeless Wedding Impressions
+  #   positions:
+  #     - title: Owner
+  #       summary: Built a startup e-commerce business from the ground up to sell artificial wedding bouquets, boutonnieres, and hair flowers. Developed and managed the store front, inventory, and employees.
+  #       location: Little Elm, TX
+  #       dates:
+  #         start:
+  #           month: 9
+  #           year: 2009
+  #         end:
+  #           month: 10
+  #           year: 2014
+  #       accomplishments:
+  #         - Transform an initial investment of $2,000 into a profitable business with $30,000 in annual revenue
+  #         - Employee and manage a team of 4 stay-at-home moms to assemble and ship orders
+
 education:
   - school: Southern Methodist University
     degree: Executive MBA    
@@ -139,6 +139,18 @@ education:
   - school: Southern Illinois University Edwardsville
     degree: BS Computer Science
     year: 2005
+
+accomplishments:
+  - accomplishment: Raised thousands of dollars for the Juvenile Diabetes Research Foundation (JDRF) through their annual OneWalk event
+    year: "Annual"  
+  - accomplishment: Built a web-based nutritional calculator to generate nutritional information for recipes in support of families living with Type 1 Diabetes
+    year: "2020"
+  - accomplishment: Won an AWS DeepRacer competition during an AWS co-sponsored conference
+    year: "2018"
+  - accomplishment: Founded and operated an e-commerce business that generated $30,000 in annual revenue
+    year: "2014"
+  - accomplishment: Maintain an open-source docker container on Docker Hub with over 5 million pulls
+    year: "2014"
 
 skills:
   management:

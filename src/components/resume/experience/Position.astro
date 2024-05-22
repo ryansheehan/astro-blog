@@ -19,7 +19,7 @@ const years = Math.round(endYear - dates.start.year + (endMonth - dates.start.mo
         <p class="position-summary">{summary}</p>
     </div>
     <ul class="accomplishments col-span-all">{
-        accomplishments.map(bullet => <li class="responsibility">{bullet}</li>)
+        accomplishments.map(bullet => <li class="accomplishment">{bullet}</li>)
     }</ul>
 </li>
 
@@ -76,16 +76,11 @@ const years = Math.round(endYear - dates.start.year + (endMonth - dates.start.mo
         font-size: var(--font-size-0);        
     }
 
-    li.responsibility {            
+    li.accomplishment {            
         padding: 0;
         max-inline-size: 100%;  
         list-style-position: outside;  
         list-style-type: square;
         margin-left: var(--size-4);
     }
-
-    /* li.responsibility::before {
-        content: "•";
-        margin-right: var(--size-1);        
-    } */
 </style>

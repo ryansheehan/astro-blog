@@ -59,6 +59,11 @@ const resume = defineCollection({
 			degree: z.string(),			
 			year: z.number()
 		})),
+
+		accomplishments: z.array(z.object({
+			accomplishment: z.string(),
+			year: z.string().optional(),
+		})),
 	})
 })
 
