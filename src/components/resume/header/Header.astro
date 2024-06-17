@@ -2,15 +2,18 @@
 import type {ResumeLink} from '@components/resume/resume-types';
 import ContactInfo from './ContactInfo.astro';
 import Summary from './Summary.astro';
+import {MapPin} from 'lucide';
+import LucideIcon from '@components/LucideIcon.astro';
 
 type Props = {
     name: string;
     title: string;
     summary: string;
+    location: string;
     links: ResumeLink[];
 }
 
-const {name, title, links, summary} = Astro.props;
+const {name, title, links, summary, location} = Astro.props;
 ---
 
 <header>
@@ -18,6 +21,7 @@ const {name, title, links, summary} = Astro.props;
         <hgroup class="name-title">
             <h1>{name}</h1>
             <p>{title}</p>
+            <span><LucideIcon icon={MapPin} class="location-icon"/><span>{location}</span></span>
         </hgroup>
         <ContactInfo {links} />
     </div>
@@ -36,9 +40,24 @@ const {name, title, links, summary} = Astro.props;
         flex-flow: row nowrap;  
         margin-bottom: var(--size-2);
         align-items: center;
+        justify-content: space-between;        
     }
 
     .name-title {
-        flex: 1;
+        /* flex: 1; */
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr auto;                
+    }
+
+    .name-title h1 {        
+        justify-self: flex-start;
+        grid-column: 1 / 3;
+    }
+
+    .location-icon {
+        aspect-ratio: 1 / 1;
+        height: 1em;
+        vertical-align: baseline;
     }
 </style>

@@ -6,7 +6,7 @@ contact:
   name: Ryan Sheehan, EMBA
   phone: "630.248.8741"
   email: rsheehan@gmail.com
-  location: Dallas, TX
+  location: Prosper, TX
   links:
     - name: linkedin
       display: /in/sheehanr
@@ -32,11 +32,11 @@ history:
             month: 6
             year: 2020         
         accomplishments:
-          - Direct the planning, implementation, and launch of the user interface to Tyler's SaaS control plane; used by thousands of customers and hundreds of internal staff
-          - Launch Tyler Forge UX System, the company's first major open source project
+          - Direct the planning, implementation, and launch of the user experience to Tyler's SaaS control plane 
+          - Launch and manage Tyler Forge, an open-source UX system that promotes brand cohesion and supports divisional autonomy in design and technology
           - Coordinate with the CTO and other engineering managers to define and implement the company's cloud strategy
           - Design and administer the training program for engineering teams transitioning to cloud development
-          - Coach and inspire five direct reports reach their career objectives
+          - Coach and inspire five direct reports reach their career objectives by strategically aligning projects to their goals
       - title: Lead Software Engineer
         summary: Guide the development of robust web applications through technical leadership, mentoring, and hands-on coding. Champion cutting-edge technologies and blaze the trail for Tyler's cloud transformation.
         location: Plano, TX
@@ -145,7 +145,7 @@ accomplishments:
     year: "Annual"  
   - accomplishment: Built a web-based nutritional calculator to generate nutritional information for recipes in support of families living with Type 1 Diabetes
     year: "2020"
-  - accomplishment: Won an AWS DeepRacer competition during an AWS co-sponsored conference
+  - accomplishment: Won an AWS DeepRacer AI competition during an AWS co-sponsored conference
     year: "2018"
   - accomplishment: Founded and operated an e-commerce business that generated $30,000 in annual revenue
     year: "2014"

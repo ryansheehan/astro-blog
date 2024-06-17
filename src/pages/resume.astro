@@ -22,7 +22,7 @@ const historySlice = 1;
     <article>
         <PrintButton class="print-button" />
         <Page>            
-            <Header name={contact.name} {title} links={contact.links} {summary} />            
+            <Header name={contact.name} {title} links={contact.links} {summary} location={contact.location}/>            
             <ResumeSection title="Core Compentencies">
                 <Skills categories={skills} />
             </ResumeSection>
