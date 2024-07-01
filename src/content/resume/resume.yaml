@@ -3,7 +3,7 @@ title: Technology Executive
 summary: Accomplished technology leader with 18+ years of hands-on experience driving digital transformations. Adept at building high-performing teams by instilling a culture of innovation, ownership, and growth mindset. Committed to driving business value through a customer-centric approach and strategic execution of technology initiatives.
 
 contact:
-  name: Ryan Sheehan, EMBA
+  name: Ryan Sheehan, MBA
   phone: "630.248.8741"
   email: rsheehan@gmail.com
   location: Prosper, TX
@@ -32,11 +32,11 @@ history:
             month: 6
             year: 2020         
         accomplishments:
-          - Direct the planning, implementation, and launch of the user experience to Tyler's SaaS control plane 
-          - Launch and manage Tyler Forge, an open-source UX system that promotes brand cohesion and supports divisional autonomy in design and technology
-          - Coordinate with the CTO and other engineering managers to define and implement the company's cloud strategy
-          - Design and administer the training program for engineering teams transitioning to cloud development
-          - Coach and inspire five direct reports reach their career objectives by strategically aligning projects to their goals
+          - Direct the planning, implementation, and launch of the user experience to Tyler's SaaS control plane centralizing customer administration solutions
+          - Launch and manage Tyler Forge, an open-source UX system that promotes brand cohesion while supporting product technology autonomy
+          - Coordinate with the CTO and peer engineering managers to define and implement the company's cloud strategy
+          - Design and administer training programs reorienting engineering teams to native cloud development
+          - Coach and inspire five senior-level direct reports by strategically aligning projects to their goals
       - title: Lead Software Engineer
         summary: Guide the development of robust web applications through technical leadership, mentoring, and hands-on coding. Champion cutting-edge technologies and blaze the trail for Tyler's cloud transformation.
         location: Plano, TX
@@ -47,12 +47,12 @@ history:
           end:
             month: 6
             year: 2020
-        accomplishments:
-          - Serve as a founding engineer for Tyler's corporate development division with the stated goal to figure out how to transition Tyler's on-premise solutions to cloud native SaaS solutions
-          - Prototype and evangelize a containerization system for better resource utilization and massive cost savings
-          - Research, build, and maintain project starters used by hundreds of projects to reduce initial development costs                 
+        accomplishments:          
+          - Established Tyler's corporate development division to transform Tyler's on-premise solutions into cloud-native SaaS implementation
+          - Prototyped and evangelized containerization solutions to maximize resource utilization and unlock massive cost savings          
+          - Centralized solutions for domain-independent challenges, enabling product teams to increase productivity on domain-specific challenges
       - title: Scrum Master
-        summary: Initially hired as a senior engineer, then moved into the role of Scrum Master. Responsible for leading a team of developers in the Agile process to modernize a major product's financial system.
+        summary: Initially hired as a senior engineer, then moved into the role of Scrum Master. Responsible for leading a team of developers in agile practices, modernizing a primary product's financial system.
         location: Plano, TX
         dates:
           start:
@@ -62,14 +62,14 @@ history:
             month: 6
             year: 2016
         accomplishments:
-          - Transform a cross-functional team of 11+ people unfamiliar with Agile practices into a multiple high-performing teams
-          - Establish an automated testing framework for large scale financial application refactor to ensure functional equivalence 
-          - Design an extensible system to manage the jury selection process to support different jurisdictional processes                   
+          - Transformed a cross-functional team of 11+ people into multiple high-performing agile practitioners
+          - Constructed an automated acceptance testing process that seamlessly translated analyst requirements into functional test stubs for engineers
+          - Architected an extensible system to customize application features, facilitating local customer requirements
 
   - company: Halliburton
     positions:
       - title: Software Engineer Consultant        
-        summary: Consulted on applying game development technology and techniques to build a 3D real-time down-hole well monitoring technology. Design and built a process tracking application to manage sign-offs and procedures for teams in the field.
+        summary: Consulted on applying game development technology and techniques to build a 3D real-time down-hole well-monitoring technology. Design and built a process tracking application to manage sign-offs and procedures for teams in the field.
         location: Carrollton, TX
         dates:
           start:
@@ -79,14 +79,14 @@ history:
             month: 6
             year: 2013
         accomplishments:
-          - Assign and review the work for an outsourced team of engineers located in Vietnam
-          - Complete and implement extensive training on agile development practices
-          - Adapt game development technology to enterprise software for a desktop application
+          - Assigned and code-reviewed work outsourced to a team of engineers in Vietnam
+          - Completed and implemented extensive training on agile development practices
+          - Adapted game development technology for use in enterprise desktop software
 
   - company: High Voltage Software
     positions:
       - title: Gameplay Software Engineer
-        summary: Software engineer building cross platform video games. Worked closely with artists, animators, audio engineers, designers, and testers to implement the vision for the look and feel of a title. 
+        summary: Software engineer building cross-platform video games. Worked closely with artists, animators, audio engineers, designers, and testers to implement the vision for the look and feel of a title. 
         location: Hoffman Estates, IL
         dates:
           start:
@@ -96,9 +96,9 @@ history:
             month: 6
             year: 2010
         accomplishments:
-          - Develop and launch two titles, Iron Man 2 (Wii, PSP) and High Voltage Hot Rod Show (WiiWare)
-          - Work directly with publishers and platform representatives to resolve certification issues for title launches
-          - Organize and engaged employees into sports teams to promote team building and physical fitness 
+          - "Developed and launched three titles: Iron Man 2 (Wii, PSP), High Voltage Hot Rod Show (WiiWare), and America's Army True Soldier (Xbox 360)"
+          - Negotiated with publishers and platform representatives to resolve certification issues during title launching          
+          - Organized-team building activities to promote cohesion across functional disciplines
 
   # - company: Oh My Heart and Home
   #   positions:
